@@ -15,23 +15,23 @@
 // char *ft_strupcase(char *str);
 
 // #include <stdio.h>
-// char        *ft_strupcase(char *str)
-// {
-// int        i;
-// i = 0;
-// while (str[i] != '\0')
-// {
-// if (str[i] >= 'a' && str[i] <= 'z')
-// {
-// str[i] -= 32;
-// }
-// i++;
-// }
-// return (str);
-// }
+char        *ft_strupcase(char *str)
+{
+int        i;
+i = 0;
+while (str[i] != '\0')
+{
+if (str[i] >= 'a' && str[i] <= 'z')
+{
+str[i] -= 32; //charaters upper are 32 positions lower
+}
+i++;
+}
+return (str);
+}
 // int        main()
 // {
-// char str[] = "abcdefghj";
+// char str[] = "abc";
 // printf("%s", ft_strupcase(str));
 // }
 

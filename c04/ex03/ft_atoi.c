@@ -25,42 +25,42 @@
 // • Here’s how it should be prototyped :
 // int ft_atoi(char *str);
 
-// #include <stdio.h>
-// int        whitespaces(char *str, int *ptr_i)
-// {
-// int        count;
-// int        i;
-// i = 0;
-// count = 1;
-// while ((str[i] >= 9 && str[i] <= 13 ) || str[i] == 32)
-// i++;
-// while ((str[i] == 43 || str[i] == 45))
-// {
-// if (str[i] == 45)
-// count *= -1;
-// i++;
-// }
-// *ptr_i = i;
-// return (count);
-// }
-// int        ft_atoi(char *str)
-// {
-// int        sign;
-// int        result;
-// int        i;
-// result = 0;
-// sign = whitespaces(str, &i);
-// while (str[i] && str[i] >= 48 && str[i] <= 57)
-// {
-// result *= 10;
-// result += str[i] - 48;
-// i++;
-// }
-// result *= sign;
-// return (result);
-// }
+#include <stdio.h>
+int        spaces(char *str, int *ptr_i)
+{
+int        count;
+int        i;
+i = 0;
+count = 1;
+while ((str[i] >= 9 && str[i] <= 13 ) || str[i] == 32) //jump spaces
+i++;
+while ((str[i] == 43 || str[i] == 45)) // + and -
+{
+if (str[i] == 45)
+count *= -1;
+i++;
+}
+*ptr_i = i;
+return (count);
+}
+int        ft_atoi(char *str)
+{
+int        jumper;
+int        result;
+int        i;
+result = 0;
+jumper = spaces(str, &i);
+while (str[i] && str[i] >= 48 && str[i] <= 57) //numbers
+{
+result *= 10;
+result += str[i] - 48;
+i++;
+}
+result *= jumper;
+return (result);
+}
 // int main(void)
 // {
-// char *s = "   ---+--+01234506789ab567";
+// char *s = "   ---+--+012sgg7";
 // printf("%d", ft_atoi(s));
 // }

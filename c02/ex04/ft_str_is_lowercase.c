@@ -10,8 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-// Create a function that returns 1 if the string given as a parameter contains only
-// lowercase alphabetical characters, and 0 if it contains any other character.
+// Create a function that returns 1 if the string given as a parameter contains only lowercase alphabetical characters, and 0 if it contains any other character.
 // • Here’s how it should be prototyped :
 // int ft_str_is_lowercase(char *str);
 // • It should return 1 if str is empty.
@@ -35,5 +34,5 @@ return (1);
 // {
 // printf("%d", ft_str_is_lowercase("batata"));
 // printf("\n%d", ft_str_is_lowercase("Batata"));
-// printf("\n%d", ft_str_is_lowercase("-_134556efSghij67"));
+// printf("\n%d", ft_str_is_lowercase("-_148493gnngs"));
 // }
