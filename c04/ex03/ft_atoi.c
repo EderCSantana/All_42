@@ -6,19 +6,24 @@
 /*   By: edesanta <edesanta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/28 00:57:10 by edesanta          #+#    #+#             */
-/*   Updated: 2023/06/28 00:57:10 by edesanta         ###   ########.fr       */
+/*   Updated: 2023/06/29 07:33:25 by edesanta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// Write a function that converts the initial portion of the string pointed by str to its int
+// Write a function that converts the initial portion of
+// the string pointed by str to its int
 // representation
-// • The string can start with an arbitray amount of white space (as determined by isspace(3))
-// • The string can be followed by an arbitrary amount of + and - signs, - sign will change
+// • The string can start with an arbitray amount of white space
+// (as determined by isspace(3))
+// • The string can be followed by an arbitrary amount of + and - signs,
+// - sign will change
 // the sign of the int returned based on the number of - is odd or even.
 // • Finally the string can be followed by any numbers of the base 10.
-// • Your function should read the string until the string stop following the rules and return
+// • Your function should read the string until the string stop following
+// the rules and return
 // the number found until now.
-// • You should not take care of overflow or underflow. result can be undefined in that case.
+// • You should not take care of overflow or underflow.
+// result can be undefined in that case.
 // • Here’s an example of a program that prints the atoi return value:
 // $>./a.out " ---+--+1234ab567"
 // -1234
@@ -26,41 +31,36 @@
 // int ft_atoi(char *str);
 
 #include <stdio.h>
-int        spaces(char *str, int *ptr_i)
+
+int	ft_atoi(char *str)
 {
-int        count;
-int        i;
-i = 0;
-count = 1;
-while ((str[i] >= 9 && str[i] <= 13 ) || str[i] == 32) //jump spaces
-i++;
-while ((str[i] == 43 || str[i] == 45)) // + and -
-{
-if (str[i] == 45)
-count *= -1;
-i++;
+	int	a;
+	int	b;
+	int	result;
+
+	a = 0;
+	b = 1;
+	result = 0;
+	while ((str[a] >= '\t' && str[a] <= '\r') || str[a] == ' ')
+		a++;
+	while (str[a] == '+' || str[a] == '-')
+	{
+		if (str[a] == '-')
+			b *= -1;
+		a++;
+	}
+	while (str[a] >= '0' && str[a] <= '9')
+	{
+		result = (str[a] - '0') + (result * 10);
+		a++;
+	}
+	return (result * b);
 }
-*ptr_i = i;
-return (count);
-}
-int        ft_atoi(char *str)
-{
-int        jumper;
-int        result;
-int        i;
-result = 0;
-jumper = spaces(str, &i);
-while (str[i] && str[i] >= 48 && str[i] <= 57) //numbers
-{
-result *= 10;
-result += str[i] - 48;
-i++;
-}
-result *= jumper;
-return (result);
-}
-// int main(void)
+// int main()
 // {
-// char *s = "   ---+--+012sgg7";
-// printf("%d", ft_atoi(s));
+// 	char *s = "      	---+--+2147--+-ab567";
+// 	int bla = ft_atoi(s);
+
+// 	printf("%d", bla);
+// 	return (0);
 // }

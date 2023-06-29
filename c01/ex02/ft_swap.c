@@ -6,17 +6,20 @@
 /*   By: edesanta <edesanta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/27 23:50:42 by edesanta          #+#    #+#             */
-/*   Updated: 2023/06/27 23:50:42 by edesanta         ###   ########.fr       */
+/*   Updated: 2023/06/28 12:43:05 by edesanta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// • Create a function that swaps the value of two integers whose addresses are entered
+// • Create a function that swaps the value of
+// two integers whose addresses are entered
 // as parameters.
 #include <stdio.h>
 #include <unistd.h>
-void ft_swap(int *a, int *b)
+
+void	ft_swap(int *a, int *b)
 {
-	int temp;
+	int	temp;
+
 	temp = *a;
 	*a = *b;
 	*b = temp;

@@ -6,24 +6,27 @@
 /*   By: edesanta <edesanta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/28 00:42:07 by edesanta          #+#    #+#             */
-/*   Updated: 2023/06/28 00:42:07 by edesanta         ###   ########.fr       */
+/*   Updated: 2023/06/28 14:28:13 by edesanta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// Reproduce the behavior of the function strcmp (man strcmp).(returns 0 if they are equal, and another number if different, according to which one is 1st)
+// Reproduce the behavior of the function strcmp (man strcmp).
+// (returns 0 if they are equal, and another number if different,
+// according to which one is 1st)
 // • Here’s how it should be prototyped :
 // int ft_strcmp(char *s1, char *s2);
 
 // #include <stdio.h>
-int        ft_strcmp(char *s1, char *s2)
+int	ft_strcmp(char *s1, char *s2)
 {
-unsigned int        i;
-i = 0;
-while (s1[i] == s2[i] && (s1[i] != '\0' || s2[i] != '\0'))
-{
-i++;
-}
-return (s1[i] - s2[i]);
+	unsigned int	i;
+
+	i = 0;
+	while (s1[i] == s2[i] && (s1[i] != '\0' || s2[i] != '\0'))
+	{
+		i++;
+	}
+	return (s1[i] - s2[i]);
 }
 // int        main()
 // {
