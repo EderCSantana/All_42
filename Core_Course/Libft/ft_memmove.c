@@ -11,3 +11,31 @@
 /* ************************************************************************** */
 
 #include <stdio.h>
+
+void	ft_memmove(void *dest, const void *org, size_t num)
+{
+	int				i;
+	unsigned char	*aux_dest;
+	unsigned char	*aux_org;
+
+	i = 0;
+	aux_dest = (unsigned char *) dest;
+	aux_org = (unsigned char *) org;
+	if (aux_dest < aux_org)
+	{
+		while (i < num)
+		{
+			aux_dest[i] = aux_org[i];
+			i++;
+		}
+	}
+	else
+	{
+		i = num + 1;
+		while (i >= 0)
+		{
+			aux_dest[i] = aux_org[i];
+			i--;
+		}
+	}
+}

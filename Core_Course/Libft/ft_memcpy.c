@@ -11,3 +11,19 @@
 /* ************************************************************************** */
 
 #include <stdio.h>
+
+void	ft_memcpy(void *dest, const void *org, size_t num)
+{
+	int				i;
+	unsigned char	*aux;
+	unsigned char	*source;
+
+	i = 0;
+	aux = (unsigned char *) dest;
+	source = (unsigned char *) org;
+	while (i < num)
+	{
+		aux[i] = source[i];
+		i++;
+	}
+}

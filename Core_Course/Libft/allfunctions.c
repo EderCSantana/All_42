@@ -75,7 +75,7 @@ int	ft_strlen(const char *str)
 	}
 	return (i);
 }
-
+ 
 void	*ft_memset(void *ptr, int c, size_t num)
 {
 	int				i;

@@ -11,3 +11,18 @@
 /* ************************************************************************** */
 
 #include <stdio.h>
+
+void	*ft_memset(void *ptr, int c, size_t num)
+{
+	int				i;
+	unsigned char	*aux;
+
+	i = 0;
+	aux = (unsigned char *) ptr;
+	while (i <= num)
+	{
+		aux[i] = (unsigned char)c;
+		i++;
+	}
+	return (ptr);
+}

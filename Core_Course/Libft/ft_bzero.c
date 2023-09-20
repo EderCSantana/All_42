@@ -11,3 +11,11 @@
 /* ************************************************************************** */
 
 #include <stdio.h>
+
+void	ft_bzero(void *str, size_t num)
+{
+	unsigned char	*aux;
+
+	aux = (unsigned char *) str;
+	ft_memset(aux, '0', num);
+}

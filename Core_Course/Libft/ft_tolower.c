@@ -11,3 +11,23 @@
 /* ************************************************************************** */
 
 #include <stdio.h>
+/**
+ * @brief  turn a uppercase character into lowercase
+ * 
+ * @param c char that can be lower or opper case
+ * @return c a character in lower case
+ */
+int ft_tolower(int c)
+{
+	if (c >= 'A' && c <= 'Z')
+		return (c - 32);
+	else
+		return (c);
+}
+
+int main()
+{
+    char    a;
+    a = 'A';
+    printf("%c", ft_tolower(a));
+}
