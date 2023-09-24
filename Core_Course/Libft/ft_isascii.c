@@ -12,12 +12,13 @@
 
 #include <stdio.h>
 
+/**
+ * @brief 
+ *
+ * @param c
+ * @return int
+ */
 int	ft_isascii(char c)
 {
 	return (c >= ('0' - 48) && c <= ('0' + 79));
-}
-
-int	ft_isprint(char c)
-{
-	return ((c >= '\t' && c <= '\r') || c == ' ' || c == '\x7f');
 }

@@ -12,6 +12,13 @@
 
 #include <stdio.h>
 
+/**
+ * @brief 
+ *
+ * @param dest
+ * @param org
+ * @param num
+ */
 void	ft_memmove(void *dest, const void *org, size_t num)
 {
 	int				i;

@@ -12,6 +12,12 @@
 
 #include <stdio.h>
 
+/**
+ * @brief 
+ *
+ * @param str
+ * @return int
+ */
 int	ft_strlen(const char *str)
 {
 	int	i;

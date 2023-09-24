@@ -12,6 +12,13 @@
 
 #include <stdio.h>
 
+/**
+ * @brief 
+ *
+ * @param s
+ * @param c
+ * @return char*
+ */
 char *ft_strchr(const char *s, int c)
 {
 	int	i;

@@ -12,6 +12,12 @@
 
 #include <stdio.h>
 
+/**
+ * @brief 
+ *
+ * @param c
+ * @return int
+ */
 int	ft_isprint(char c)
 {
 	return ((c >= '\t' && c <= '\r') || c == ' ' || c == '\x7f');

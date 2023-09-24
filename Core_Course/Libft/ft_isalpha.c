@@ -11,6 +11,12 @@
 /* ************************************************************************** */
 #include <stdio.h>
 
+/**
+ * @brief 
+ *
+ * @param str
+ * @return int
+ */
 int	ft_isalpha(char *str)
 {
 	int	i;

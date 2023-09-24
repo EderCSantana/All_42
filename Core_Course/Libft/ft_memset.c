@@ -12,6 +12,15 @@
 
 #include <stdio.h>
 
+
+/**
+ * @brief 
+ *
+ * @param ptr
+ * @param c
+ * @param num
+ * @return void*
+ */
 void	*ft_memset(void *ptr, int c, size_t num)
 {
 	int				i;

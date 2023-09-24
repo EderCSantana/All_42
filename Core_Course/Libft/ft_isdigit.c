@@ -12,6 +12,12 @@
 
 #include <stdio.h>
 
+/**
+ * @brief 
+ *
+ * @param c
+ * @return int
+ */
 int	ft_isdigit(char *c)
 {
 	if (c == '\0')

@@ -12,6 +12,12 @@
 
 #include <stdio.h>
 
+/**
+ * @brief 
+ *
+ * @param str
+ * @param num
+ */
 void	ft_bzero(void *str, size_t num)
 {
 	unsigned char	*aux;
