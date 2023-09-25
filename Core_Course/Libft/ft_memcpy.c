@@ -13,11 +13,15 @@
 #include <stdio.h>
 
 /**
- * @brief 
+ * @brief used to copy a block of memory from a source location 
+ * to a destination location
  *
- * @param dest
- * @param org
- * @param num
+ * @param dest A pointer to the destination memory location
+ *  where the data will be copied.
+ * @param org A pointer to the source memory location from which
+ *  the data will be copied.
+ * @param num The number of bytes to be copied from the source location
+ *  (org) to the destination location (dest)
  */
 void	ft_memcpy(void *dest, const void *org, size_t num)
 {

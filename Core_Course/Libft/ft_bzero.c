@@ -13,10 +13,12 @@
 #include <stdio.h>
 
 /**
- * @brief 
+ * @brief zero out a block of memory by setting all the bytes in 
+ * the memory block to zero (0)
  *
- * @param str
- * @param num
+ * @param str A pointer to the memory block to be zeroed
+ * @param num The number of bytes to be set to zero in the memory
+ *  block pointed to by str
  */
 void	ft_bzero(void *str, size_t num)
 {

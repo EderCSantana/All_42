@@ -13,11 +13,12 @@
 #include <stdio.h>
 
 /**
- * @brief 
+ * @brief used to copy a block of memory from a source location
+ *  to a destination location, but handles overlapping
  *
- * @param dest
- * @param org
- * @param num
+ * @param dest pointer to the destination memory location
+ * @param org A pointer to the source memory location from
+ * @param num he number of bytes to be copied from the source location
  */
 void	ft_memmove(void *dest, const void *org, size_t num)
 {

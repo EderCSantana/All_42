@@ -12,32 +12,25 @@
 #include <stdio.h>
 
 /**
- * @brief 
+ * @brief sed to check whether a given character is an alphabet letter
+ *  (a-z or A-Z)
  *
- * @param str
- * @return int
+ * @param c which represents the character to be checked.
+ * @return int Non-zero (true): If the input character c is an 
+ * alphabet letter (a-z or A-Z).
+Zero (false): If c is not an alphabet letter
  */
-int	ft_isalpha(char *str)
+int	ft_isalpha(char c)
 {
-	int	i;
 
-	i = 0;
-	if (str[i] == '\0')
-	{
+	if (c == '\0')
+		return (0);
+	else if (c >= 'a' && c <= 'z')
 		return (1);
-	}
-	while (str[i] != '\0')
-	{
-		if (str[i] >= 'a' && str[i] <= 'z')
-		{
-			i++;
-		}
-		else if ((str[i] >= 'A' && str[i] <= 'Z'))
-			i++;
-		else
-			return (0);
-	}
-	return (1);
+	else if ((c >= 'A' && c <= 'Z'))
+		return (1);
+	else
+		return (0);
 }
 
 // int main(int argc, char *argv[])

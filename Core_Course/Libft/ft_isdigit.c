@@ -13,10 +13,11 @@
 #include <stdio.h>
 
 /**
- * @brief 
+ * @brief used to check whether a given character is a digit (0-9)
  *
- * @param c
- * @return int
+ * @param c parameter c, which represents the character to be checked
+ * @return int Non-zero (true): If the input character c is a digit (0-9).
+Zero (false): If the input character c is not a digit
  */
 int	ft_isdigit(char *c)
 {

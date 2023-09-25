@@ -13,10 +13,13 @@
 #include <stdio.h>
 
 /**
- * @brief 
+ * @brief used to check whether a given character is an alphanumeric character,
+ *  which includes both alphabet letters (a-z or A-Z) and digits (0-9)
  *
- * @param c
- * @return int
+ * @param c character to be checked
+ * @return int Non-zero (true): If the input character c 
+ * is an alphanumeric character (a-z, A-Z, or 0-9). 
+ * It returns 0 if c is not alphanumeric
  */
 int	ft_isalnum(char c)
 {

@@ -13,10 +13,12 @@
 #include <stdio.h>
 
 /**
- * @brief 
+ * @brief sed to check whether a given character is a printable character
  *
- * @param c
- * @return int
+ * @param c single char parameter 
+ * @return int Non-zero: If the input character c is a 
+ * printable character within the ASCII range of 0 to 127.
+Zero: If the input character c is not a printable character
  */
 int	ft_isprint(char c)
 {
