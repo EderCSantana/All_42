@@ -11,3 +11,14 @@
 /* ************************************************************************** */
 
 #include <stdio.h>
+
+/**
+ * @brief 
+ *
+ * @param s
+ * @param fd
+ */
+void ft_putendl_fd(char *s, int fd)
+{
+
+}
