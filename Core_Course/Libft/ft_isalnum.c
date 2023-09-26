@@ -34,3 +34,15 @@ int	ft_isalnum(char c)
 	else
 		return (0);
 }
+
+int main()
+{
+	int i;
+	char c;
+    for ( i = 0; i <= 127; i++) {
+		c = '\0' + i;
+        printf("Character '%c': %s\n", c, ft_isalnum(c) ? "ALNUM" : "NOT ALNUM");
+    }
+
+    return 0;
+}

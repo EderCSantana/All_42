@@ -19,6 +19,7 @@
  * @param str A pointer to the memory block to be zeroed
  * @param num The number of bytes to be set to zero in the memory
  *  block pointed to by str
+ * !to finish
  */
 void	ft_bzero(void *str, size_t num)
 {
