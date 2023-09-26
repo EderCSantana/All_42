@@ -13,10 +13,12 @@
 #include <stdio.h>
 
 /**
- * @brief 
+ * @brief The toupper function converts a lowercase letter to its
+ *  uppercase equivalent
  *
- * @param c
- * @return int
+ * @param c The character to be converted
+ * @return int The converted character, or the original character 
+ * if it is not a lowercase letter
  */
 int ft_toupper(int c)
 {

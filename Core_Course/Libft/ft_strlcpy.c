@@ -11,3 +11,17 @@
 /* ************************************************************************** */
 
 #include <stdio.h>
+
+/**
+ * @brief 
+ * 
+ * @param dst A pointer to the destination string
+ * @param src A pointer to the source string
+ * @param size The size of the destination buffer, in bytes
+ * @return size_t The number of characters copied, 
+ * not including the terminating null character
+ */
+size_t ft_strlcpy(char *dst, const char *src, size_t size)
+{
+
+}

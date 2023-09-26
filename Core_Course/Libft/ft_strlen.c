@@ -13,10 +13,11 @@
 #include <stdio.h>
 
 /**
- * @brief 
+ * @brief The strlen function calculates the length of the string str
  *
- * @param str
- * @return int
+ * @param str A pointer to the string to be measured
+ * @return int The length of the string, not including the 
+ * terminating null character.
  */
 int	ft_strlen(const char *str)
 {

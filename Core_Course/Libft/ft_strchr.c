@@ -15,9 +15,10 @@
 /**
  * @brief 
  *
- * @param s
- * @param c
- * @return char*
+ * @param s  A pointer to the string to be searched
+ * @param c The character to search for
+ * @return char* A pointer to the first occurrence of the character
+ *  c in the string s. If the character is not found, NULL is returned
  */
 char *ft_strchr(const char *s, int c)
 {

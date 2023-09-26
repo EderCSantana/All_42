@@ -11,3 +11,19 @@
 /* ************************************************************************** */
 
 #include <stdio.h>
+
+/**
+ * @brief The strnstr function searches for the first occurrence
+ *  of the string needle in the string haystack 
+ * in at most len number of characters
+ * 
+ * @param looking_on A pointer to the string to be searched
+ * @param look_for A pointer to the string to be searched for
+ * @param len The maximum number of characters to search
+ * @return char* A pointer to the first occurrence of the string needle
+ *  in the string haystack, or NULL if the string is not found.
+ */
+char *ft_strnstr(const char *looking_on, const char *look_for, size_t len)
+{
+
+}

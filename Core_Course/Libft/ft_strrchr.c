@@ -13,11 +13,13 @@
 #include <stdio.h>
 
 /**
- * @brief 
+ * @brief The strrchr function searches for the last occurrence of the 
+ * character c in the string str
  *
- * @param s
- * @param c
- * @return char*
+ * @param s  pointer to the string to be searched
+ * @param c The character to be searched for
+ * @return char* A pointer to the last occurrence of the character c 
+ * in the string str, or NULL if the character is not found.
  */
 char *ft_strrchr(const char *s, int c)
 {

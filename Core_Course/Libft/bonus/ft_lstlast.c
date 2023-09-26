@@ -10,3 +10,15 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdio.h>
+
+/**
+ * @brief Returns the last node of the list.
+ * 
+ * @param lst The beginning of the list.
+ * @return t_list* Last node of the list
+ */
+t_list *ft_lstlast(t_list *lst)
+{
+
+}
