@@ -27,4 +27,6 @@
 void *ft_calloc(size_t num_elements, size_t element_size)
 {
     int i;
+
+    i = 0;
 }

@@ -28,3 +28,16 @@ void	ft_bzero(void *str, size_t num)
 	aux = (unsigned char *) str;
 	ft_memset(aux, '0', num);
 }
+
+// int main()
+// {
+//     char A[10] = "Olar";
+    
+//     printf("Original: %s\n", A);
+    
+//     ft_bzero(A, 5); 
+    
+//     printf("After ft_bzero: %s\n", A);
+    
+//     return 0;
+// }
