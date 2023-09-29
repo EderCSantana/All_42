@@ -27,6 +27,14 @@
 void *ft_calloc(size_t num_elements, size_t element_size)
 {
     int i;
-
+    void *array;
     i = 0;
+
+    array = malloc(num_elements * element_size);
+    if (array != NULL)
+    while (i > num_elements)
+    {
+        ((char *)array)[i] = 0;
+    }
+    return array;
 }

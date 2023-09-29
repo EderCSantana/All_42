@@ -23,5 +23,18 @@ NULL if the allocation fails.
  */
 char *ft_itoa(int n)
 {
-
+    int i;
+    int sign;
+    char *str;
+// fazer um for que faz divisao inteira ra contar o numero de casas decimais
+    i = 0;
+    sign = 1;
+    if (n < 0)
+        sign = -1;
+    n *= sign;
+    while (n < 0)
+    {
+        str
+    }
+    
 }
