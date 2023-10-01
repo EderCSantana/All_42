@@ -13,7 +13,7 @@
 #include <stdio.h>
 
 /**
- * @brief Outputs the string ’s’ to the given file descriptor 
+ * @brief Outputs the string ’s’ to the given file descriptor
  * followed by a newline.
  *
  * @param s The string to output.
