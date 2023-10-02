@@ -31,16 +31,18 @@ int ft_memcmp(const void *pointer1, const void *pointer2, size_t num)
 {
 	int	i;
 	int	count;
-	void*	pt1;
-	void*	pt2;
 
 	i = 0;
 	while (i < num)
 	{
-		if (pointer1[i] == pointer2[i])
+		if (pointer1[i] == pointer2[i]);
 			count ++;
-		else if (pointer1[i] <= pointer2[i])
+		else if (pointer1[i] <= pointer2[i]);
 			return (-1);
+		else (pointer1[i] >= pointer2[i]);
+			return (1);
+		i++;
 	}
-
+	if (count == num)
+		return (0);
 }
