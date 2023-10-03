@@ -1,24 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: edesanta <edesanta@student.42prague.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/19 18:30:25 by edesanta          #+#    #+#             */
-/*   Updated: 2023/09/19 18:30:25 by edesanta         ###   ########.fr       */
+/*   Created: 2023/09/19 18:30:32 by edesanta          #+#    #+#             */
+/*   Updated: 2023/09/19 18:30:32 by edesanta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 
 /**
- * @brief Outputs the character ’c’ to the given file descriptor.
+ * @brief Outputs the string ’s’ to the given file descriptor.
  *
- * @param c The character to output.
+ * @param s The string to output.
  * @param fd The file descriptor on which to write.
  */
-void ft_putchar_fd(char c, int fd)
+void ft_putstr_fd(char *s, int fd)
 {
+	int	i;
 
+	i = 0;
+	while (s[i] != '\0')
+	{
+		write (fd, &s[i], 1);
+		i++;
+	}
 }

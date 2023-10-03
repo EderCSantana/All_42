@@ -1,21 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: edesanta <edesanta@student.42.fr>          +#+  +:+       +#+        */
+/*   By: edesanta <edesanta@student.42prague.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/28 00:54:11 by edesanta          #+#    #+#             */
-/*   Updated: 2023/06/28 15:26:32 by edesanta         ###   ########.fr       */
+/*   Created: 2023/09/19 18:30:30 by edesanta          #+#    #+#             */
+/*   Updated: 2023/09/19 18:30:30 by edesanta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// • Create a function that displays the number entered as a parameter.
-// The function
-// has to be able to display all possible values within an int type variable.
-// • Here’s how it should be prototyped :
-// void ft_putnbr(int nb);
-
+#include <stdio.h>
 #include <unistd.h>
 
 void	ft_putchar(char c)
@@ -23,6 +18,12 @@ void	ft_putchar(char c)
 	write(1, &c, 1);
 }
 
+/**
+ * @brief Outputs the integer ’n’ to the given file descriptor.
+ *
+ * @param n The integer to output.
+ * @param fd The file descriptor on which to write.
+ */
 void	ft_putnbr(int nb)
 {
 	if (nb == -2147483648)
@@ -45,7 +46,3 @@ void	ft_putnbr(int nb)
 	else
 		ft_putchar(nb + 48);
 }
-// int main (void)
-// {
-// 	ft_putnbr(-436);
-// }

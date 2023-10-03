@@ -14,9 +14,9 @@
 
 /**
  * @brief The strnstr function searches for the first occurrence
- *  of the string needle in the string haystack 
+ *  of the string needle in the string haystack
  * in at most len number of characters
- * 
+ *
  * @param looking_on A pointer to the string to be searched
  * @param look_for A pointer to the string to be searched for
  * @param len The maximum number of characters to search
@@ -25,5 +25,23 @@
  */
 char *ft_strnstr(const char *looking_on, const char *look_for, size_t len)
 {
+	int	i;
+	int	j;
 
+	i = 0;
+	j = 0;
+	if (look_for[j] == '\0')
+		return (looking_on);
+	while (looking_on[i] != '\0')
+	{
+		while (looking_on[i + j] == look_for[j] && looking_on[i + j] != '\0')
+			if (j == len)
+				return (looking_on + i);
+			j++;
+		if (look_for[j] == '\0')
+			return (looking_on + i);
+		i++;
+		j = 0;
+	}
+	return (0);
 }

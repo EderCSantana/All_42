@@ -11,11 +11,11 @@
 /* ************************************************************************** */
 
 #include <stdio.h>
-
+#include <stdlib.h>
 /**
- * @brief Allocates a block of memory with same size as the parameter, 
+ * @brief Allocates a block of memory with same size as the parameter,
  * copy it there and returns a pointer to the duplicated
- * 
+ *
  * @param str A pointer to the string to be duplicated
  * @return char* A pointer to a newly allocated string that is a
  *  duplicate of the string pointed to by str.
@@ -23,5 +23,13 @@
  */
 char *ft_strdup(const char *str)
 {
+	int	i;
+	char* dup;
 
+	i = 0;
+	while (str[i] != '\0')
+		i++;
+	dup = malloc(i * sizeof(char));
+	dup = str;
+	return &dup;
 }

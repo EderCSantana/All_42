@@ -26,6 +26,7 @@ in pointer1 than in pointer2.
 A positive integer: If the first differing byte in the memory blocks
 pointed to by pointer1 and pointer2 has a higher value
 in pointer1 than in pointer2.
+ * !checar com a gwen
  */
 int ft_memcmp(const void *pointer1, const void *pointer2, size_t num)
 {
