@@ -14,8 +14,9 @@
 
 /**
  * @brief The strlcat function appends the source string src to the end
- *  of the destination string dst. The function will append at most size - strlen(dst) - 1 bytes, NUL-terminating the result
- * 
+ *  of the destination string dst. The function will append at
+ * most size - strlen(dst) - 1 bytes, NUL-terminating the result
+ *
  * @param dst A pointer to the destination string.
  * @param src: A pointer to the source string.
  * @param size: The size of the destination buffer, in bytes.
