@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #include <stdio.h>
-
+#include <stdlib.h>
 
 int	ft_strlen(const char *str)
 {
@@ -26,24 +26,22 @@ int	ft_strlen(const char *str)
 	}
 	return (i);
 }
-/**
- * @brief Applies the function ’f’ to each character of the
-string ’s’, and passing its index as first argument
-to create a new string (with malloc(3)) resulting
-from successive applications of ’f’.
 
- *
- * @param s The string on which to iterate.
- * @param f The function to apply to each character
- * @return char* The string created from the successive applications of ’f’.
-Returns NULL if the allocation fails.
- */
-char *ft_strmapi(char const *s, char (*f)(unsigned
-int, char))
+char *ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	int	i;
-	char* result;
+	unsigned int	i;
+	char	*result;
 
 	i = 0;
-	result = malloc(ft_strlen(*s) * sizeof(char));
+	result = (char*)malloc((ft_strlen(s) + 1) * sizeof(char));
+	if (!result)
+		return (NULL);
+	while (s[i] != '\0')
+	{
+		printf("Char: %c\n", f(i, s[i]));
+		result[i] = f(i, s[i]);
+		i++;
+	}
+	result[i] = '\0';
+	return result;
 }
