@@ -12,6 +12,20 @@
 
 #include <stdio.h>
 
+int	ft_strlen(const char *str)
+{
+	int	i;
+
+	i = 0;
+	if (str[0] == '\0')
+		return (0);
+	while (str[i] != '\0')
+	{
+		i++;
+	}
+	return (i);
+}
+
 /**
  * @brief The strlcat function appends the source string src to the end
  *  of the destination string dst. The function will append at
@@ -25,5 +39,38 @@
  */
 size_t ft_strlcat(char *dst, const char *src, size_t size)
 {
+	int	i;
+	int	num;
+	size_t size_total;
 
+	i = ft_strlen(dst) - 1;
+	num = size / sizeof(dst[i]);
+	while (dst[i] < num)
+	{
+		dst[i] = src[i];
+		i++;
+	}
+	dst[num] = '\0';
+	size_total = (ft_strlen(dst) + ft_strlen(src) -1) * sizeof(src[0]);
+	return (size_total);
 }
+
+// int main()
+// {
+// 	char my_array[10][20];
+
+// 	// Obtém o tamanho do vetor
+// 	size_t size = sizeof(my_array) / sizeof(my_array[0]);
+
+// 	printf("O tamanho do vetor é: %zu\n", size);
+
+// 	char dst[] = "Hello, world!";
+// 	char src[] = "Goodbye, world!";
+
+// 	size_t len = ft_strlcat(dst, src, sizeof(dst));
+
+// 	printf("The destination string is: %s\n", dst);
+// 	printf("The return value is: %zu\n", len);
+// 	return 0;
+
+// }

@@ -44,23 +44,30 @@ char *ft_strtrim(char const *s1, char const *set)
 	char	*s2;
 
 	i = 0;
-	if (!s1)
-	return (NULL);
+	if (!s1 || !set)
+		return (NULL);
 	s2 = (char*)malloc((ft_strlen(s1) + 1) * sizeof(char));
+	if (!s2)
+		return NULL;
 	while (s1[i] != '\0')
 	{
 		j = 0;
-		while (j < ft_strlen(set))
+		while (set[j] != '\0')
 		{
 			if (s1[i] == set[j])
 			{
+				// break;
 				j++;
 			}
 			else
-			s2[i] = s1[i];
+			{
+				s2[i] = s1[i];
+			}
+			j++;
 		}
 		i++;
 	}
+	s2[i] = '\0';
 	return (s2);
 }
 
