@@ -11,10 +11,11 @@
 /* ************************************************************************** */
 
 #include <stdio.h>
+#include <libft.h>
 
 /**
  * @brief Returns the last node of the list.
- * 
+ *
  * @param lst The beginning of the list.
  * @return t_list* Last node of the list
  */

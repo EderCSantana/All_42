@@ -12,20 +12,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-
-int	ft_strlen(const char *str)
-{
-	int	i;
-
-	i = 0;
-	if (str[0] == '\0')
-		return (0);
-	while (str[i] != '\0')
-	{
-		i++;
-	}
-	return (i);
-}
+#include <libft.h>
 
 /**
  * @brief Allocates (with malloc(3)) and returns a new
@@ -62,14 +49,14 @@ char *ft_strjoin(char const *s1, char const *s2)
 	return (s3);
 }
 
-int main()
-{
-	char*	s1;
-	char*	s2;
-	char*	s3;
+// int main()
+// {
+// 	char*	s1;
+// 	char*	s2;
+// 	char*	s3;
 
-	s1 = "Hello,";
-	s2 = " world";
-	s3 = ft_strjoin(s1, s2);
-	printf("%s", s3);
-}
+// 	s1 = "Hello,";
+// 	s2 = " world";
+// 	s3 = ft_strjoin(s1, s2);
+// 	printf("%s", s3);
+// }

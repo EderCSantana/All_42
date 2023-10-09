@@ -11,9 +11,10 @@
 /* ************************************************************************** */
 
 #include <stdio.h>
+#include <libft.h>
 
 /**
- * @brief 
+ * @brief
  *
  * @param s  A pointer to the string to be searched
  * @param c The character to search for

@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include <stdio.h>
+#include <libft.h>
 
 /**
  * @brief The strnstr function searches for the first occurrence

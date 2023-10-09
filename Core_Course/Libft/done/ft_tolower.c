@@ -11,9 +11,10 @@
 /* ************************************************************************** */
 
 #include <stdio.h>
+#include <libft.h>
 /**
  * @brief  turn a uppercase character into lowercase
- * 
+ *
  * @param c char that can be lower or opper case
  * @return c a character in lower case
  */
@@ -25,9 +26,9 @@ int ft_tolower(int c)
 		return (c);
 }
 
-int main()
-{
-    char    a;
-    a = 'A';
-    printf("%c", ft_tolower(a));
-}
+// int main()
+// {
+//     char    a;
+//     a = 'A';
+//     printf("%c", ft_tolower(a));
+// }

@@ -11,12 +11,13 @@
 /* ************************************************************************** */
 
 #include <stdio.h>
+#include <libft.h>
 
 /**
  * @brief sed to check whether a given character is a printable character
  *
- * @param c single char parameter 
- * @return int Non-zero: If the input character c is a 
+ * @param c single char parameter
+ * @return int Non-zero: If the input character c is a
  * printable character within the ASCII range of 0 to 127.
 Zero: If the input character c is not a printable character
  */

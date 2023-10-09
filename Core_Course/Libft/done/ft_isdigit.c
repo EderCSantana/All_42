@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include <stdio.h>
+#include <libft.h>
 
 /**
  * @brief used to check whether a given character is a digit (0-9)

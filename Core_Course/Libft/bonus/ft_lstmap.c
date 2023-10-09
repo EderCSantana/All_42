@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include <stdio.h>
+#include <libft.h>
 
 /**
  * @brief Iterates the list ’lst’ and applies the function
@@ -19,7 +20,7 @@ list resulting of the successive applications of
 the function ’f’. The ’del’ function is used to
 delete the content of a node if needed.
 
- * 
+ *
  * @param lst The address of a pointer to a node.
  * @param f The address of the function used to iterate on the list.
  * @param del The address of the function used to delete

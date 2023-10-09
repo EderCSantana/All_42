@@ -12,20 +12,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-
-int	ft_strlen(const char *str)
-{
-	int	i;
-
-	i = 0;
-	if (str[0] == '\0')
-		return (0);
-	while (str[i] != '\0')
-	{
-		i++;
-	}
-	return (i);
-}
+#include <libft.h>
 
 /**
  * @brief Allocates (with malloc(3)) and returns a copy of
@@ -71,14 +58,14 @@ char *ft_strtrim(char const *s1, char const *set)
 	return (s2);
 }
 
-int main()
-{
-	char*	string;
-	char*	set;
-	char*	result;
+// int main()
+// {
+// 	char*	string;
+// 	char*	set;
+// 	char*	result;
 
-	string = "hello, world!";
-	set = "ol";
-	result = ft_strtrim(string, set);
-	printf("final string: %s", result);
-}
+// 	string = "hello, world!";
+// 	set = "ol";
+// 	result = ft_strtrim(string, set);
+// 	printf("final string: %s", result);
+// }

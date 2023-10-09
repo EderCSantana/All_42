@@ -10,13 +10,14 @@
 /*                                                                            */
 /* ************************************************************************** */
 #include <stdio.h>
+#include <libft.h>
 
 /**
  * @brief sed to check whether a given character is an alphabet letter
  *  (a-z or A-Z)
  *
  * @param c which represents the character to be checked.
- * @return int Non-zero (true): If the input character c is an 
+ * @return int Non-zero (true): If the input character c is an
  * alphabet letter (a-z or A-Z).
 Zero (false): If c is not an alphabet letter
  */

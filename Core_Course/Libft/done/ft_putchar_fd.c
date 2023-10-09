@@ -12,6 +12,7 @@
 
 #include <stdio.h>
 #include <unistd.h>
+#include <libft.h>
 
 /**
  * @brief Outputs the character ’c’ to the given file descriptor.

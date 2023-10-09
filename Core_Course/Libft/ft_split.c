@@ -12,42 +12,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-
-int	ft_strlen(const char *str)
-{
-	int	i;
-
-	i = 0;
-	if (str[0] == '\0')
-		return (0);
-	while (str[i] != '\0')
-	{
-		i++;
-	}
-	return (i);
-}
-
-char *ft_substr(char const *s, unsigned int start,size_t len)
-{
-	size_t	i;
-	char	*result;
-
-	i = 0;
-	if (!s)
-		return (NULL);
-	else if (start > ft_strlen(s))
-		return (NULL);
-	result = (char *)malloc(sizeof(char) * (len + 1));
-	if (!result)
-        return (NULL);
-	while (s[start + i] != '\0' && i < len)
-	{
-		result[i] = s[start + i];
-		i++;
-	}
-	result[i] = '\0';
-	return (result);
-}
+#include <libft.h>
 
 static size_t	ft_cut_number(const char *s, char c)
 {
@@ -114,41 +79,40 @@ char **ft_split(char const *s, char c)
 	return matrix;
 }
 
+// void imprimir_matriz_char(char **matriz)
+// {
+// 	int linhas = 0;
+// 	int colunas = 0;
 
-void imprimir_matriz_char(char **matriz)
-{
-	int linhas = 0;
-	int colunas = 0;
+//   // Encontre o número de linhas e colunas da matriz
+// 	for (int i = 0; matriz[i] != NULL; i++) {
+//     linhas++;
+//     colunas = ft_strlen(matriz[i]);
+// 	}
 
-  // Encontre o número de linhas e colunas da matriz
-	for (int i = 0; matriz[i] != NULL; i++) {
-    linhas++;
-    colunas = ft_strlen(matriz[i]);
-	}
+//   // Imprima a matriz
+// 	for (int i = 0; i < linhas; i++) {
+//     for (int j = 0; j < colunas; j++) {
+// 	printf("%c ", matriz[i][j]);
+//     }
+//     printf("\n");
+// 	}
+// }
+// int main()
+// {
+// 	char* string = "chupa que a cana eh doce meu filho";
+// 	char remove = ' ';
+// 	char** matriz;
 
-  // Imprima a matriz
-	for (int i = 0; i < linhas; i++) {
-    for (int j = 0; j < colunas; j++) {
-	printf("%c ", matriz[i][j]);
-    }
-    printf("\n");
-	}
-}
-int main()
-{
-	char* string = "chupa que a cana eh doce meu filho";
-	char remove = ' ';
-	char** matriz;
-
-	matriz = ft_split(string, remove);
-	if (matriz == NULL) {
-		printf("Erro ao alocar memória para a matriz de strings\n");
-		return 1;
-	}
-	imprimir_matriz_char(matriz);
-	for (int i = 0; matriz[i] != NULL; i++) {
-		free(matriz[i]);
-	}
-	free(matriz);
-	return 0;
-}
+// 	matriz = ft_split(string, remove);
+// 	if (matriz == NULL) {
+// 		printf("Erro ao alocar memória para a matriz de strings\n");
+// 		return 1;
+// 	}
+// 	imprimir_matriz_char(matriz);
+// 	for (int i = 0; matriz[i] != NULL; i++) {
+// 		free(matriz[i]);
+// 	}
+// 	free(matriz);
+// 	return 0;
+// }

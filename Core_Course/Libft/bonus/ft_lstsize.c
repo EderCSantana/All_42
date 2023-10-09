@@ -11,10 +11,11 @@
 /* ************************************************************************** */
 
 #include <stdio.h>
+#include <libft.h>
 
 /**
  * @brief Counts the number of nodes in a list.
- * 
+ *
  * @param lst The beginning of the list.
  * @return int The length of the list
  */

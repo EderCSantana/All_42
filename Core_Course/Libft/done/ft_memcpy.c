@@ -11,9 +11,10 @@
 /* ************************************************************************** */
 
 #include <stdio.h>
+#include <libft.h>
 
 /**
- * @brief used to copy a block of memory from a source location 
+ * @brief used to copy a block of memory from a source location
  * to a destination location
  *
  * @param dest A pointer to the destination memory location

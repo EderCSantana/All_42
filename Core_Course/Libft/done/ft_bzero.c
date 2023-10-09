@@ -11,15 +11,15 @@
 /* ************************************************************************** */
 
 #include <stdio.h>
+#include <libft.h>
 
 /**
- * @brief zero out a block of memory by setting all the bytes in 
+ * @brief zero out a block of memory by setting all the bytes in
  * the memory block to zero (0)
  *
  * @param str A pointer to the memory block to be zeroed
  * @param num The number of bytes to be set to zero in the memory
  *  block pointed to by str
- * !to finish
  */
 void	ft_bzero(void *str, size_t num)
 {
@@ -32,12 +32,12 @@ void	ft_bzero(void *str, size_t num)
 // int main()
 // {
 //     char A[10] = "Olar";
-    
+
 //     printf("Original: %s\n", A);
-    
-//     ft_bzero(A, 5); 
-    
+
+//     ft_bzero(A, 5);
+
 //     printf("After ft_bzero: %s\n", A);
-    
+
 //     return 0;
 // }

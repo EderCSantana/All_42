@@ -12,6 +12,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <libft.h>
 /**
  * @brief Allocates a block of memory with same size as the parameter,
  * copy it there and returns a pointer to the duplicated
