@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "c:/Users/Eder/All_42",
-      "program": "c:/Users/Eder/All_42/build/Debug/outDebug",
+      "cwd": "c:/Users/Eder/Documents/GitHub/All_42/Core_Course/Libft",
+      "program": "c:/Users/Eder/Documents/GitHub/All_42/Core_Course/Libft/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
