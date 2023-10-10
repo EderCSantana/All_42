@@ -24,6 +24,7 @@ static size_t	ft_cut_number(const char *s, char c)
 	{
 		if (s[i] == c)
 			count ++;
+			i++;
 	}
 	return (count);
 }

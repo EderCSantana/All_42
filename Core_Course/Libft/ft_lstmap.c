@@ -30,5 +30,27 @@ NULL if the allocation fails.
  */
 t_list *ft_lstmap(t_list *lst, void *(*f)(void *),void (*del)(void *))
 {
+	t_list *aux;
+	t_list *the_end;
 
+	aux = NULL;
+	the_end = NULL;
+	while (lst)
+	{
+		if (aux == NULL)
+		{
+			aux = ft_lstnew((*f)(lst->content));
+			if (aux == NULL)
+				ft_lstdelone(aux, del);
+			the_end = ft_lstlast(aux);
+		}
+		else
+		{
+			the_end->next = ft_lstnew(aux);
+			the_end = the_end->next;
+			the_end->content = ft_lstnew((*f)(lst->content));
+			the_end->next = NULL;
+		}
+	}
+	return (aux);
 }

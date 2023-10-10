@@ -22,40 +22,33 @@
  *  to be found the memory block
  * @param num The number of bytes to search within the memory block
  * starting from the memory location pointed to by ptr
- * @return void* unction returns a pointer to the first occurrence of the
- *  byte value value
- * unction returns a pointer to the first occurrence of the byte value value
- * !checar com a gwen
+ * @return void* function returns a pointer to the first occurrence of the
+ *  byte value
  */
 void *ft_memchr(const void *ptr, int value, size_t num)
 {
 	int	i;
 
 	i = 0;
-	void* c;
-	c = malloc(num);
-	c = &ptr[0];
-	while (c != '/0')
+	unsigned char* c;
+	c = (unsigned char*) ptr;
+	while (i < num)
 	{
-		if (c == value)
+		if (*c == (unsigned char)value)
 			return (c);
-		else
-		{
+			c++;
 			i++;
-			c = &ptr[i];
-		}
 	}
-	if (c == (void*)'\0')
-		return (NULL);
+	return (NULL);
 }
 
-// int main() {
-//   // Create a test array
-//   char test_array[] = "Hello, world!";
+int main() {
+  // Create a test array
+  char test_array[] = "Hello, world!";
 
-//     void* result = ft_memchr(test_array, 'w', sizeof(test_array));
+    void* result = ft_memchr(test_array, 'w', sizeof(test_array));
 
-//       printf("ft_memchr found the character '%c'", (char*)result);
+      printf("ft_memchr found the character '%s'", (char*)result);
 
-//   return 0;
-// }
+  return 0;
+}
