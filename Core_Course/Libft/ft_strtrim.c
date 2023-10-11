@@ -27,32 +27,18 @@ NULL if the allocation fails
 char *ft_strtrim(char const *s1, char const *set)
 {
 	int	i;
-	int	j;
 	char	*s2;
+	size_t last;
 
-	i = 0;
+	i = ft_strlen(s1);
 	if (!s1 || !set)
 		return (NULL);
 	s2 = (char*)malloc((ft_strlen(s1) + 1) * sizeof(char));
 	if (!s2)
 		return NULL;
-	while (s1[i] != '\0')
+	while (i)
 	{
-		j = 0;
-		while (set[j] != '\0')
-		{
-			if (s1[i] == set[j])
-			{
-				// break;
-				j++;
-			}
-			else
-			{
-				s2[i] = s1[i];
-			}
-			j++;
-		}
-		i++;
+
 	}
 	s2[i] = '\0';
 	return (s2);

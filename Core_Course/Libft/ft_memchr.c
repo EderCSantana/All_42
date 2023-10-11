@@ -42,13 +42,13 @@ void *ft_memchr(const void *ptr, int value, size_t num)
 	return (NULL);
 }
 
-int main() {
-  // Create a test array
-  char test_array[] = "Hello, world!";
+// int main() {
+//   // Create a test array
+//   char test_array[] = "Hello, world!";
 
-    void* result = ft_memchr(test_array, 'w', sizeof(test_array));
+//     void* result = ft_memchr(test_array, 'w', sizeof(test_array));
 
-      printf("ft_memchr found the character '%s'", (char*)result);
+//       printf("ft_memchr found the character '%s'", (char*)result);
 
-  return 0;
-}
+//   return 0;
+// }

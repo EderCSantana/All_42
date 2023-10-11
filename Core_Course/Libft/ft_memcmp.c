@@ -27,24 +27,21 @@ in pointer1 than in pointer2.
 A positive integer: If the first differing byte in the memory blocks
 pointed to by pointer1 and pointer2 has a higher value
 in pointer1 than in pointer2.
- * !checar com a gwen
  */
 int ft_memcmp(const void *pointer1, const void *pointer2, size_t num)
 {
 	int	i;
-	int	count;
+	char *vec1;
+	char *vec2;
 
 	i = 0;
+	vec1 = (unsigned char*)pointer1;
+	vec2 = (unsigned char*)pointer2;
 	while (i < num)
 	{
-		if (pointer1[i] == pointer2[i]);
-			count ++;
-		else if (pointer1[i] <= pointer2[i]);
-			return (-1);
-		else (pointer1[i] >= pointer2[i]);
-			return (1);
+		if (vec1[i] != vec2[i]);
+			return (vec1[i] - vec2[i]);
 		i++;
 	}
-	if (count == num)
-		return (0);
+	return (0);
 }
