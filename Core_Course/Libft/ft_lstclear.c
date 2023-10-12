@@ -22,9 +22,9 @@ Finally, the pointer to the list must be set to  NULL.
  * @param del The address of the function used to delete
 the content of the node.
  */
-void ft_lstclear(t_list **lst, void (*del)(void*))
+void	ft_lstclear(t_list **lst, void (*del)(void*))
 {
-	t_list *aux;
+	t_list	*aux;
 
 	if (*lst)
 	{

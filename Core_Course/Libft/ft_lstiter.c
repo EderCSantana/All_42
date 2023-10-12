@@ -20,7 +20,7 @@
  * @param lst The address of a pointer to a node.
  * @param f The address of the function used to iterate on the list.
  */
-void ft_lstiter(t_list *lst, void (*f)(void *))
+void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
 	while (lst->next != NULL)
 	{

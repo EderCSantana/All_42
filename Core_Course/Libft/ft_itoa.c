@@ -17,32 +17,33 @@
 
 int ft_deccount(int n)
 {
-    int count;
+	int count;
 
-	if (n == INT_MIN)
-    {
-        return (11);
-    }
-    count = 1;
+	if (n == -2147483648)
+{
+		return (11);
+	}
+	count = 1;
 	if (n < 0)
 	{
 		n /= -1;
 		count++;
 	}
-    if (n/10 == 0)
-    {
-        return (count);
-    }
+	if (n / 10 == 0)
+	{
+		return (count);
+	}
 	else
 	{
-		while (n/10)
-        {
-            n /=10;
-            count++;
-        }
+		while (n / 10)
+		{
+			n /= 10;
+			count++;
+		}
 	}
-    return count;
+	return (count);
 }
+
 /**
  * @brief Allocates (with malloc(3)) and returns a string
 representing the integer received as an argument.
@@ -52,37 +53,34 @@ Negative numbers must be handled.
  * @return char* The string representing the integer.
 NULL if the allocation fails.
  */
-char *ft_itoa(int n)
+char	*ft_itoa(int n)
 {
-    int i;
-    int sign;
-    int size;
-    char *str;
+	int i;
+	int sign;
+	int size;
+	char *str;
 
-    size = ft_deccount(n);
-    sign = 1;
-    if (n < 0)
-    {
-        sign = -1;
-    }
-    str = malloc((size + 1) * sizeof(char));
-    if (str == NULL)
-        return NULL;
+	size = ft_deccount(n);
+	sign = 1;
+	if (n < 0)
+		sign = -1;
+	str = malloc((size + 1) * sizeof(char));
+	if (str == NULL)
+		return (NULL);
 	if (sign == -1)
 	{
 		str[0] = '-';
-	    n *= sign;
+		n *= sign;
 	}
 	i = 0;
-    while (n != 0)
-    {
-        str[size - i - 1] = n % 10 + '0';
-        n /= 10;
-        i++;
-    }
-    str[size] ='\0';
-    printf("o tamanho é: %d", size);
-    return (str);
+	while (n != 0)
+	{
+		str[size - i - 1] = n % 10 + '0';
+		n /= 10;
+		i++;
+	}
+	str[size] = '\0';
+	return (str);
 }
 
 // int main()

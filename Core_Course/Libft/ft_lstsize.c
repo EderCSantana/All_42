@@ -19,7 +19,7 @@
  * @param lst The beginning of the list.
  * @return int The length of the list
  */
-int ft_lstsize(t_list *lst)
+int	ft_lstsize(t_list *lst)
 {
 	int	count;
 
