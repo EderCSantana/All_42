@@ -25,17 +25,17 @@
  * the function returns a pointer to the start of the allocated memory block.
  * NULL (null pointer): If memory allocation fails
  */
-void *ft_calloc(size_t num_elements, size_t element_size)
+void	*ft_calloc(size_t num_elements, size_t element_size)
 {
-    int i;
-    void *array;
-    i = 0;
+	int		i;
+	void	*array;
 
-    array = malloc(num_elements * element_size);
-    if (array != NULL)
-    while (i > num_elements)
-    {
-        ((char *)array)[i] = 0;
-    }
-    return array;
+	i = 0;
+	array = malloc(num_elements * element_size);
+	if (array != NULL)
+	while (i > num_elements)
+	{
+		((char *)array)[i] = 0;
+	}
+	return array;
 }
