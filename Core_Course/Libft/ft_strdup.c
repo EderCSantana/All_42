@@ -22,15 +22,15 @@
  *  duplicate of the string pointed to by str.
  *  If the allocation fails, returns NULL
  */
-char *ft_strdup(const char *str)
+char	*ft_strdup(const char *str)
 {
-	int	i;
-	char* dup;
+	int		i;
+	char	*dup;
 
 	i = 0;
 	while (str[i] != '\0')
 		i++;
 	dup = malloc(i * sizeof(char));
 	dup = str;
-	return &dup;
+	return (&dup);
 }

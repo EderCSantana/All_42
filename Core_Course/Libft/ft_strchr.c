@@ -21,7 +21,7 @@
  * @return char* A pointer to the first occurrence of the character
  *  c in the string s. If the character is not found, NULL is returned
  */
-char *ft_strchr(const char *s, int c)
+char	*ft_strchr(const char *s, int c)
 {
 	int	i;
 
@@ -30,5 +30,5 @@ char *ft_strchr(const char *s, int c)
 	{
 		i++;
 	}
-	return (char *)&s[i];
+	return ((char *)&s[i]);
 }

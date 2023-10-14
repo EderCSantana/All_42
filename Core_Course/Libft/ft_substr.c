@@ -25,7 +25,7 @@ The substring begins at index ’start’ and is of maximum size ’len’.
  * @return char* The substring.
 NULL if the allocation fails.
  */
-char *ft_substr(char const *s, unsigned int start,size_t len)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	size_t	i;
 	char	*result;
@@ -37,7 +37,7 @@ char *ft_substr(char const *s, unsigned int start,size_t len)
 		return (NULL);
 	result = (char *)malloc(sizeof(char) * (len + 1));
 	if (!result)
-        return (NULL);
+		return (NULL);
 	while (s[start + i] != '\0' && i < len)
 	{
 		result[i] = s[start + i];

@@ -22,28 +22,23 @@
  * @return size_t The number of characters copied,
  * not including the terminating null character
  */
-size_t ft_strlcpy(char *dst, const char *src, size_t size)
+size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
-	int	i;
-	int	num;
-	size_t size_total;
+	int		i;
+	int		num;
+	size_t	size_total;
 
 	i = 0;
 	num = size / sizeof(dst[i]);
-	// printf("Starting loop with dst=%s, src=%s, size=%zu, num=%d\n",
-		// dst, src, size, num);
 	if (num == 0)
 		return (ft_strlen(src));
 	while (i < num && src[i] != '\0')
 	{
 		dst[i] = src[i];
-		// printf("dst[%d] = %c, src[%d] = %c\n", i, dst[i], i, src[i]);
 		i++;
 	}
 	dst[num] = '\0';
 	size_total = ft_strlen(src) * sizeof(src[0]);
-	// printf("Ending loop with dst=%s, src=%s, size=%zu, num=%d, size_total=%zu\n",
-	// 	dst, src, size, num, size_total);
 	return (size_total);
 }
 

@@ -14,7 +14,8 @@
 #include <libft.h>
 
 /**
- * @brief used to check whether a given character is an alphanumeric character,
+ * @brief used to check whether a given character is an alphanumeric
+ * character,
  *  which includes both alphabet letters (a-z or A-Z) and digits (0-9)
  *
  * @param c character to be checked
@@ -35,15 +36,3 @@ int	ft_isalnum(char c)
 	else
 		return (0);
 }
-
-// int main()
-// {
-// 	int i;
-// 	char c;
-//     for ( i = 0; i <= 127; i++) {
-// 		c = '\0' + i;
-//         printf("Character '%c': %s\n", c, ft_isalnum(c) ? "ALNUM" : "NOT ALNUM");
-//     }
-
-//     return 0;
-// }

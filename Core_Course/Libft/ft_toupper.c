@@ -21,7 +21,7 @@
  * @return int The converted character, or the original character
  * if it is not a lowercase letter
  */
-int ft_toupper(int c)
+int	ft_toupper(int c)
 {
 	if (c >= 'a' && c <= 'z')
 		return (c - 32);

@@ -25,19 +25,19 @@
  * @return void* function returns a pointer to the first occurrence of the
  *  byte value
  */
-void *ft_memchr(const void *ptr, int value, size_t num)
+void	*ft_memchr(const void *ptr, int value, size_t num)
 {
-	int	i;
+	int				i;
+	unsigned char	*c;
 
 	i = 0;
-	unsigned char* c;
-	c = (unsigned char*) ptr;
+	c = (unsigned char *) ptr;
 	while (i < num)
 	{
 		if (*c == (unsigned char)value)
 			return (c);
-			c++;
-			i++;
+		c++;
+		i++;
 	}
 	return (NULL);
 }

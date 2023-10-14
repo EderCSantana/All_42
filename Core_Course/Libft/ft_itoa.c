@@ -15,12 +15,12 @@
 #include <limits.h>
 #include <libft.h>
 
-int ft_deccount(int n)
+int	ft_deccount(int n)
 {
-	int count;
+	int	count;
 
 	if (n == -2147483648)
-{
+	{
 		return (11);
 	}
 	count = 1;
@@ -55,10 +55,10 @@ NULL if the allocation fails.
  */
 char	*ft_itoa(int n)
 {
-	int i;
-	int sign;
-	int size;
-	char *str;
+	int		i;
+	int		sign;
+	int		size;
+	char	*str;
 
 	size = ft_deccount(n);
 	sign = 1;

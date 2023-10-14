@@ -22,7 +22,7 @@ address to ’f’ to be modified if necessary.
  * @param s The string on which to iterate.
  * @param f The function to apply to each character.
  */
-void ft_striteri(char *s, void (*f)(unsigned int,
+void	ft_striteri(char *s, void (*f)(unsigned int,
 char*))
 {
 	unsigned int	i;
@@ -34,4 +34,3 @@ char*))
 		i++;
 	}
 }
-

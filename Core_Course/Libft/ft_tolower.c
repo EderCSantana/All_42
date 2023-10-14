@@ -18,7 +18,7 @@
  * @param c char that can be lower or opper case
  * @return c a character in lower case
  */
-int ft_tolower(int c)
+int	ft_tolower(int c)
 {
 	if (c >= 'A' && c <= 'Z')
 		return (c - 32);

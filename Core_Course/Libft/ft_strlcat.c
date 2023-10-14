@@ -24,11 +24,11 @@
  * @return The total length of the string that would have been created
  *  if there was unlimited space
  */
-size_t ft_strlcat(char *dst, const char *src, size_t size)
+size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
-	int	i;
-	int	num;
-	size_t size_total;
+	int		i;
+	int		num;
+	size_t	size_total;
 
 	i = ft_strlen(dst) - 1;
 	num = size / sizeof(dst[i]);

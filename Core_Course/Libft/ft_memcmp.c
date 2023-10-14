@@ -28,18 +28,18 @@ A positive integer: If the first differing byte in the memory blocks
 pointed to by pointer1 and pointer2 has a higher value
 in pointer1 than in pointer2.
  */
-int ft_memcmp(const void *pointer1, const void *pointer2, size_t num)
+int	ft_memcmp(const void *pointer1, const void *pointer2, size_t num)
 {
-	int	i;
-	char *vec1;
-	char *vec2;
+	int		i;
+	char	*vec1;
+	char	*vec2;
 
 	i = 0;
-	vec1 = (unsigned char*)pointer1;
-	vec2 = (unsigned char*)pointer2;
+	vec1 = (unsigned char *)pointer1;
+	vec2 = (unsigned char *)pointer2;
 	while (i < num)
 	{
-		if (vec1[i] != vec2[i]);
+		if (vec1[i] != vec2[i])
 			return (vec1[i] - vec2[i]);
 		i++;
 	}

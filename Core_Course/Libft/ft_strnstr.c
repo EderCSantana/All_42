@@ -24,7 +24,7 @@
  * @return char* A pointer to the first occurrence of the string needle
  *  in the string haystack, or NULL if the string is not found.
  */
-char *ft_strnstr(const char *looking_on, const char *look_for, size_t len)
+char	*ft_strnstr(const char *looking_on, const char *look_for, size_t len)
 {
 	int	i;
 	int	j;
@@ -36,9 +36,11 @@ char *ft_strnstr(const char *looking_on, const char *look_for, size_t len)
 	while (looking_on[i] != '\0')
 	{
 		while (looking_on[i + j] == look_for[j] && looking_on[i + j] != '\0')
+		{
 			if (j == len)
 				return (looking_on + i);
 			j++;
+		}
 		if (look_for[j] == '\0')
 			return (looking_on + i);
 		i++;

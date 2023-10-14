@@ -24,12 +24,12 @@ of ’s1’ and ’s2’.
  * @return char* The new string.
  * NULL if the allocation fails.
  */
-char *ft_strjoin(char const *s1, char const *s2)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	int	i;
-	int	j;
-	int size;
-	char*	s3;
+	int		i;
+	int		j;
+	int		size;
+	char	*s3;
 
 	i = 0;
 	j = 0;
@@ -42,10 +42,10 @@ char *ft_strjoin(char const *s1, char const *s2)
 	}
 	while (j < ft_strlen(s2))
 	{
-		s3[i+j-1] = s2[j];
+		s3[i + j - 1] = s2[j];
 		j++;
 	}
-	s3[i+j] = '\0';
+	s3[i + j] = '\0';
 	return (s3);
 }
 

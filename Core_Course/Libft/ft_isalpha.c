@@ -23,7 +23,6 @@ Zero (false): If c is not an alphabet letter
  */
 int	ft_isalpha(char c)
 {
-
 	if (c == '\0')
 		return (0);
 	else if (c >= 'a' && c <= 'z')
