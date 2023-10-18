@@ -96,19 +96,28 @@ from the beginning and the end of the string.
 NULL if the allocation fails
  */
 char	*ft_strtrim(char const *s1, char const *set)
-{
-	int		i;
-	char	*s2;
+// {
+// 	int		i;
+// 	char	*s2;
 
-	i = ft_strlen(s1);
-	if (!s1 || !set)
+// 	i = ft_strlen(s1);
+// 	if (!s1 || !set)
+// 		return (NULL);
+// 	s2 = (char *) malloc((ft_strlen(s1) + 1) * sizeof(char));
+// 	if (!s2)
+// 		return (NULL);
+// 	s2 = ft_slack(s1, s2, set, i);
+// 	return (*s2);
+// }
+{
+	int	i;
+	char *s2;
+
+	if(!s1)
 		return (NULL);
-	s2 = (char *) malloc((ft_strlen(s1) + 1) * sizeof(char));
-	if (!s2)
-		return (NULL);
-	s2 = ft_slack(s1, s2, set, i);
-	return (*s2);
 }
+
+
 
 // int main()
 // {
