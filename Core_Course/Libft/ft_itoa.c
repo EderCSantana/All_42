@@ -10,38 +10,30 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <limits.h>
 #include <libft.h>
 
-int	ft_deccount(int n)
+static char	ft_first(int n, char *s, size_t size)
+{
+	if (n == 0)
+		s[0] = '0';
+	else if (size == 1)
+		s[0] = '-';
+	else
+		return (s);
+}
+
+static int	ft_counter(int n)
 {
 	int	count;
 
-	if (n == -2147483648)
+	count = 0;
+	if (n == 0)
+		return (1);
+	while (n != 0)
 	{
-		return (11);
-	}
-	count = 1;
-	if (n < 0)
-	{
-		n /= -1;
+		n = n / 10;
 		count++;
 	}
-	if (n / 10 == 0)
-	{
-		return (count);
-	}
-	else
-	{
-		while (n / 10)
-		{
-			n /= 10;
-			count++;
-		}
-	}
-	return (count);
 }
 
 /**

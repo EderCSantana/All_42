@@ -22,11 +22,11 @@ NULL if the allocation fails
  */
 char	*ft_strtrim(char const *s1, char const *set)
 {
-	size_t last;
+	size_t	last;
 
-	if(!s1)
+	if (!s1)
 		return (NULL);
-	while(*s1 != '\0' && ft_strchr(set, s1*))
+	while (*s1 != '\0' && ft_strchr(set, *s1))
 		s1++;
 	last = ft_strlen(s1);
 	while (last && ft_strchr(set, s1[last]))
