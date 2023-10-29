@@ -47,32 +47,23 @@ NULL if the allocation fails.
  */
 char	*ft_itoa(int n)
 {
-	int		i;
-	int		sign;
-	int		size;
-	char	*str;
+	size_t		size;
+	char		s;
+	long int	number;
 
-	size = ft_deccount(n);
-	sign = 1;
-	if (n < 0)
-		sign = -1;
-	str = malloc((size + 1) * sizeof(char));
-	if (str == NULL)
-		return (NULL);
-	if (sign == -1)
+	number = n;
+	size = 0;
+	if (number < 0)
 	{
-		str[0] = '-';
-		n *= sign;
+		number = number * -1;
+		size = 1;
 	}
-	i = 0;
-	while (n != 0)
-	{
-		str[size - i - 1] = n % 10 + '0';
-		n /= 10;
-		i++;
-	}
-	str[size] = '\0';
-	return (str);
+	size = size + ft_counter(n);
+	s = malloc(size + 1);
+	if (s == 0)
+		return (0);
+	s[size] = '\0';
+	
 }
 
 // int main()
