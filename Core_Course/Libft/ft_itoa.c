@@ -47,8 +47,8 @@ NULL if the allocation fails.
  */
 char	*ft_itoa(int n)
 {
-	size_t		size;
-	char		s;
+	int			size;
+	char		*s;
 	long int	number;
 
 	number = n;
@@ -63,7 +63,13 @@ char	*ft_itoa(int n)
 	if (s == 0)
 		return (0);
 	s[size] = '\0';
-	
+	while (number > 0)
+	{
+		s[size - 1] = number % 10 + '\0';
+		number = number / 10;
+		size--;
+	}
+
 }
 
 // int main()
