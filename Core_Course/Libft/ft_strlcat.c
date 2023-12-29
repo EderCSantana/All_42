@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #include <stdio.h>
-#include <libft.h>
+#include "libft.h"
 
 /**
  * @brief The strlcat function appends the source string src to the end

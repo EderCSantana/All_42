@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #include <stdio.h>
-#include <libft.h>
+#include "libft.h"
 
 /**
  * @brief The strrchr function searches for the last occurrence of the

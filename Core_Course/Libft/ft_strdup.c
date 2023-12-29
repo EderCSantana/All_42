@@ -12,7 +12,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-#include <libft.h>
+#include "libft.h"
 /**
  * @brief Allocates a block of memory with same size as the parameter,
  * copy it there and returns a pointer to the duplicated
@@ -30,7 +30,12 @@ char	*ft_strdup(const char *str)
 	i = 0;
 	while (str[i] != '\0')
 		i++;
-	dup = malloc(i * sizeof(char));
-	dup = str;
-	return (&dup);
+	dup = malloc(i + 1);
+	if (dup == NULL)
+		return (NULL);
+	while (i--)
+	{
+		dup[i] = str[i];
+	}
+	return (dup);
 }

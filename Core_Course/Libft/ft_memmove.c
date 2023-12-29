@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #include <stdio.h>
-#include <libft.h>
+#include "libft.h"
 
 /**
  * @brief used to copy a block of memory from a source location
@@ -32,7 +32,7 @@ void	ft_memmove(void *dest, const void *org, size_t num)
 	aux_org = (unsigned char *) org;
 	if (aux_dest < aux_org)
 	{
-		while (i < num)
+		while (i < (int)num)
 		{
 			aux_dest[i] = aux_org[i];
 			i++;

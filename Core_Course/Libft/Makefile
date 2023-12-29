@@ -11,7 +11,7 @@
 # **************************************************************************** #
 
 NAME = libft.a
-CC = gcc
+CC = clang
 CFLAGS = -Wall -Wextra -Werror
 HEADER = libft.h
 FUNCTIONS = ft_atoi.c ft_bzero.c ft_isalnum.c ft_isalpha.c ft_isascii.c \
@@ -23,7 +23,8 @@ ft_split.c ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c ft_putstr_fd.c \
 ft_putnbr_fd.c ft_strtjoin.c ft_strcmp.c ft_isspace.c ft_strtok.c ft_lstnew.c \
 ft_lstadd_front.c ft_lstsize.c ft_lstlast.c ft_lstadd_back.c ft_lstdelone.c \
 ft_lstclear.c ft_lstiter.c ft_lstmap.c ft_strcpy.c \
-OBJECTS = $(FUNCTIONS:%.c=.o)
+
+OBJECTS = $(FUNCTIONS:%.c=%.o)
 $(NAME): $(OBJECTS) $(HEADER)
 		ar -rcs $(NAME) $(OBJECTS)
 
@@ -31,7 +32,7 @@ all:	$(NAME)
 
 clean:
 		rm -rf $(OBJECTS) $(HEADER)
-		rm -rf $(NAME) $(OBJECTS)
+		rm -rf ./a.out
 
 fclean: clean
 		rm -rf $(NAME)

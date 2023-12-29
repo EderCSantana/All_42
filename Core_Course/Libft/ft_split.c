@@ -12,7 +12,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-#include <libft.h>
+#include "libft.h"
 
 static size_t	ft_cut_number(const char *s, char c)
 {

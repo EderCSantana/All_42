@@ -12,7 +12,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-#include <libft.h>
+#include "libft.h"
 /**
  * @brief  used to search for the first occurrence of a specific
  * byte value (character) in a block of memory
@@ -32,7 +32,7 @@ void	*ft_memchr(const void *ptr, int value, size_t num)
 
 	i = 0;
 	c = (unsigned char *) ptr;
-	while (i < num)
+	while (i < (int)num)
 	{
 		if (*c == (unsigned char)value)
 			return (c);

@@ -12,7 +12,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-#include <libft.h>
+#include "libft.h"
 
 /**
  * @brief Allocates (with malloc(3)) and returns a substring
@@ -33,7 +33,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	i = 0;
 	if (!s)
 		return (NULL);
-	else if (start > ft_strlen(s))
+	else if ((int)start > ft_strlen(s))
 		return (NULL);
 	result = (char *)malloc(sizeof(char) * (len + 1));
 	if (!result)

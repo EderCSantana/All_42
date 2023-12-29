@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #include <stdio.h>
-#include <libft.h>
+#include "libft.h"
 
 /**
  * @brief used to copy a block of memory from a source location
@@ -33,7 +33,7 @@ void	ft_memcpy(void *dest, const void *org, size_t num)
 	i = 0;
 	aux = (unsigned char *) dest;
 	source = (unsigned char *) org;
-	while (i < num)
+	while (i < (int)num)
 	{
 		aux[i] = source[i];
 		i++;

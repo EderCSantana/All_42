@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #include <stdio.h>
-#include <libft.h>
+#include "libft.h"
 
 /**
  * @brief The strnstr function searches for the first occurrence
@@ -32,17 +32,17 @@ char	*ft_strnstr(const char *looking_on, const char *look_for, size_t len)
 	i = 0;
 	j = 0;
 	if (look_for[j] == '\0')
-		return (looking_on);
+		return ((char *)(looking_on));
 	while (looking_on[i] != '\0')
 	{
 		while (looking_on[i + j] == look_for[j] && looking_on[i + j] != '\0')
 		{
-			if (j == len)
-				return (looking_on + i);
+			if (j == (int)len)
+				return ((char *)(looking_on + i));
 			j++;
 		}
 		if (look_for[j] == '\0')
-			return (looking_on + i);
+			return ((char *)(looking_on + i));
 		i++;
 		j = 0;
 	}

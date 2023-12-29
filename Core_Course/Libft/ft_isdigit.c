@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #include <stdio.h>
-#include <libft.h>
+#include "libft.h"
 
 /**
  * @brief used to check whether a given character is a digit (0-9)
@@ -22,9 +22,9 @@ Zero (false): If the input character c is not a digit
  */
 int	ft_isdigit(char *c)
 {
-	if (c == '\0')
+	if (c == NULL)
 		return (1);
-	if (c >= '0' && c <= '9')
+	if (c >= (char *) '0' && c <= (char *) '9')
 	{
 		return (0);
 	}

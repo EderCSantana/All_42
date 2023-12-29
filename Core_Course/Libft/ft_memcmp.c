@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #include <stdio.h>
-#include <libft.h>
+#include "libft.h"
 
 /**
  * @brief used to compare two blocks of memory
@@ -35,9 +35,9 @@ int	ft_memcmp(const void *pointer1, const void *pointer2, size_t num)
 	char	*vec2;
 
 	i = 0;
-	vec1 = (unsigned char *)pointer1;
-	vec2 = (unsigned char *)pointer2;
-	while (i < num)
+	vec1 = (char *)pointer1;
+	vec2 = (char *)pointer2;
+	while (i < (int)num)
 	{
 		if (vec1[i] != vec2[i])
 			return (vec1[i] - vec2[i]);

@@ -10,66 +10,138 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include "libft.h"
 
-static char	ft_first(int n, char *s, size_t size)
+// static char	ft_first(int n, char *s, size_t size)
+// {
+// 	if (n == 0)
+// 		s[0] = '0';
+// 	else if (size == 1)
+// 	{
+// 		s[0] = '-';
+// 		return (*s);
+// 	}
+
+// }
+
+// static int	ft_counter(int n)
+// {
+// 	int	count;
+
+// 	count = 0;
+// 	if (n == 0)
+// 		return (1);
+// 	while (n != 0)
+// 	{
+// 		n = n / 10;
+// 		count++;
+// 	}
+// 	return (count);
+// }
+
+// /**
+//  * @brief Allocates (with malloc(3)) and returns a string
+// representing the integer received as an argument.
+// Negative numbers must be handled.
+//  *
+//  * @param n the integer to convert.
+//  * @return char* The string representing the integer.
+// NULL if the allocation fails.
+//  */
+// char	*ft_itoa(int n)
+// {
+// 	int			size;
+// 	char		*s;
+// 	long int	number;
+
+// 	number = n;
+// 	size = 0;
+// 	if (number < 0)
+// 	{
+// 		number = number * -1;
+// 		size = 1;
+// 	}
+// 	size = size + ft_counter(n);
+// 	s = malloc(size + 1);
+// 	if (s == 0)
+// 		return (0);
+// 	s[size] = '\0';
+// 	while (number > 0)
+// 	{
+// 		s[size - 1] = number % 10 + '\0';
+// 		number = number / 10;
+// 		size--;
+// 		if (s == NULL)
+// 			return (NULL);
+// 	}
+// 	return (s);
+// }
+
+#include <stdlib.h>
+
+/**
+* @brief Allocates (with malloc(3)) and returns a string
+* representing the integer received as an argument.
+* Negative numbers must be handled.
+*
+* @param n the integer to convert.
+* @return char* The string representing the integer.
+* NULL if the allocation fails.
+*/
+char *ft_itoa(int n)
 {
-	if (n == 0)
-		s[0] = '0';
-	else if (size == 1)
-		s[0] = '-';
-	else
-		return (s);
-}
+    int size;
+    char *s;
+    long int number;
 
-static int	ft_counter(int n)
-{
-	int	count;
+    number = n;
+    size = 0;
+    if (number < 0)
+    {
+        number = number * -1;
+        size = 1;
+    }
+    size = size + ft_counter(n);
+    s = malloc(size + 1);
+    if (s == NULL)
+    {
+        return (NULL);
+    }
+    s[size] = '\0';
+    while (number > 0)
+    {
+        s[size - 1] = number % 10 + '\0';
+        number = number / 10;
+        size--;
+    }
 
-	count = 0;
-	if (n == 0)
-		return (1);
-	while (n != 0)
-	{
-		n = n / 10;
-		count++;
-	}
+    if (s == NULL)
+    {
+        return (NULL);
+    }
+
+    return (s);
 }
 
 /**
- * @brief Allocates (with malloc(3)) and returns a string
-representing the integer received as an argument.
-Negative numbers must be handled.
- *
- * @param n the integer to convert.
- * @return char* The string representing the integer.
-NULL if the allocation fails.
- */
-char	*ft_itoa(int n)
+* @brief Counts the number of digits in the integer received as an argument.
+*
+* @param n the integer to count the digits of.
+* @return int the number of digits in n.
+*/
+int ft_counter(int n)
 {
-	int			size;
-	char		*s;
-	long int	number;
+    int count;
 
-	number = n;
-	size = 0;
-	if (number < 0)
-	{
-		number = number * -1;
-		size = 1;
-	}
-	size = size + ft_counter(n);
-	s = malloc(size + 1);
-	if (s == 0)
-		return (0);
-	s[size] = '\0';
-	while (number > 0)
-	{
-		s[size - 1] = number % 10 + '\0';
-		number = number / 10;
-		size--;
-	}
-
+    count = 0;
+    if (n == 0)
+        return (1);
+    while (n != 0)
+    {
+        n = n / 10;
+        count++;
+    }
+    return (count);
 }
 
 // int main()

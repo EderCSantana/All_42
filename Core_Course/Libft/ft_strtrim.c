@@ -10,6 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
 /**
  * @brief Allocates (with malloc(3)) and returns a copy of
 ’s1’ with the characters specified in ’set’ removed

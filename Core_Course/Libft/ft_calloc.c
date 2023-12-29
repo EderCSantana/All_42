@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #include <stdio.h>
-#include <libft.h>
+#include "libft.h"
 
 /**
  * @brief used to allocate and initialize a block of memory
@@ -34,7 +34,7 @@ void	*ft_calloc(size_t num_elements, size_t element_size)
 	array = malloc(num_elements * element_size);
 	if (array != NULL)
 	{
-		while (i > num_elements)
+		while (i > (int)num_elements)
 		{
 			((char *)array)[i] = 0;
 			i++;

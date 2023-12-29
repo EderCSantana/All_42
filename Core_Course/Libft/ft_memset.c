@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #include <stdio.h>
-#include <libft.h>
+#include "libft.h"
 
 /**
  * @brief used to fill a block of memory with a specified value
@@ -28,7 +28,7 @@ void	*ft_memset(void *ptr, int c, size_t num)
 
 	i = 0;
 	aux = (unsigned char *) ptr;
-	while (i <= num)
+	while (i <= (int)num)
 	{
 		aux[i] = (unsigned char)c;
 		i++;
