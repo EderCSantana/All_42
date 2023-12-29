@@ -10,7 +10,7 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME = libft.h
+NAME = libft.a
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror
 HEADER = libft.h
