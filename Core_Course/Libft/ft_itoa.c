@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-
 // static char	ft_first(int n, char *s, size_t size)
 // {
 // 	if (n == 0)
@@ -76,74 +75,62 @@
 // 	}
 // 	return (s);
 // }
-
-#include <stdlib.h>
-
-/**
-* @brief Allocates (with malloc(3)) and returns a string
-* representing the integer received as an argument.
-* Negative numbers must be handled.
-*
-* @param n the integer to convert.
-* @return char* The string representing the integer.
-* NULL if the allocation fails.
-*/
-char *ft_itoa(int n)
+static int	ft_decimal(int n)
 {
-    int size;
-    char *s;
-    long int number;
+	int	count;
 
-    number = n;
-    size = 0;
-    if (number < 0)
-    {
-        number = number * -1;
-        size = 1;
-    }
-    size = size + ft_counter(n);
-    s = malloc(size + 1);
-    if (s == NULL)
-    {
-        return (NULL);
-    }
-    s[size] = '\0';
-    while (number > 0)
-    {
-        s[size - 1] = number % 10 + '\0';
-        number = number / 10;
-        size--;
-    }
-
-    if (s == NULL)
-    {
-        return (NULL);
-    }
-
-    return (s);
+	count = 0;
+	if (n == 0)
+	{
+		return (1);
+	}
+	while (n != 0)
+	{
+		n = n / 10;
+		++count;
+	}
+	return (count);
 }
 
-/**
-* @brief Counts the number of digits in the integer received as an argument.
-*
-* @param n the integer to count the digits of.
-* @return int the number of digits in n.
-*/
-int ft_counter(int n)
+static char	*ft_printitoa(int n, char *str, size_t len)
 {
-    int count;
-
-    count = 0;
-    if (n == 0)
-        return (1);
-    while (n != 0)
-    {
-        n = n / 10;
-        count++;
-    }
-    return (count);
+	if (n == 0)
+	{
+		str[0] = '0';
+	}
+	else if (len == 1)
+	{
+		str[0] = '-';
+	}
+	return (str);
 }
 
+char	*ft_itoa(int n)
+{
+	size_t		len;
+	char		*str;
+	long int	num;
+
+	num = n;
+	len = 0;
+	if (num < 0)
+	{
+		num = (num * -1);
+		len = 1;
+	}
+	len = len + ft_decimal(n);
+	str = malloc((len + 1));
+	if (str == 0)
+		return (0);
+	str[len] = '\0';
+	while (num > 0)
+	{
+		str[len - 1] = num % 10 + '0';
+		num = num / 10;
+		len--;
+	}
+	return (ft_printitoa(n, str, len));
+}
 // int main()
 // {
 //     int test_values[] = {123, -456, 7890, 0, -987654321, -1};

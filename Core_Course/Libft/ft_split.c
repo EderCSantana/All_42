@@ -20,6 +20,7 @@ static size_t	ft_cut_number(const char *s, char c)
 	size_t	count;
 
 	i = 0;
+	count = 0;
 	while (s[i] != '\0')
 	{
 		if (s[i] == c)
@@ -37,6 +38,7 @@ static size_t	ft_strs(const char *s, char c)
 	size_t	count;
 
 	i = 0;
+	count = 0;
 	while (s[i] != '\0' && s[i] == c)
 	{
 		count++;
@@ -45,6 +47,11 @@ static size_t	ft_strs(const char *s, char c)
 	return (count);
 }
 
+void	ft_nullret(const char *c)
+{
+	if (!c)
+		return;
+}
 /**
  * @brief Allocates (with malloc(3)) and returns an array
 of strings obtained by splitting ’s’ using the
@@ -61,8 +68,7 @@ char	**ft_split(char const *s, char c)
 	int		i;
 	char	**matrix;
 
-	if (!s)
-		return (NULL);
+	ft_nullret(s);
 	matrix = malloc((ft_cut_number(s, c) + 1) * sizeof(char *));
 	if (!matrix)
 		return (NULL);
@@ -77,9 +83,12 @@ char	**ft_split(char const *s, char c)
 			i++;
 		}
 		else
+		{
+			if (i > 0)
+				matrix[i] = NULL;
 			i++;
+		}
 	}
-	matrix[i] = '\0';
 	return (matrix);
 }
 
