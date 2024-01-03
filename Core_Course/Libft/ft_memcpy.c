@@ -24,18 +24,31 @@
  * @param num The number of bytes to be copied from the source location
  *  (org) to the destination location (dest)
  */
-void	ft_memcpy(void *dest, const void *org, size_t num)
-{
-	int				i;
-	unsigned char	*aux;
-	unsigned char	*source;
+// void	ft_memcpy(void *dest, const void *org, size_t num)
+// {
+// 	unsigned char		*aux;
+// 	const unsigned char	*source;
 
-	i = 0;
-	aux = (unsigned char *) dest;
-	source = (unsigned char *) org;
-	while (i < (int)num)
-	{
-		aux[i] = source[i];
-		i++;
-	}
+// 	source = (const unsigned char *) org;
+// 	// if (!dest && !org)
+// 	// 	return (NULL);
+// 	aux = (unsigned char *) dest;
+// 	while (num--)
+// 		*aux++ = *source++;
+// 	// return (dest);
+// }
+#include "libft.h"
+
+void	*ft_memcpy(void *dest, const void *src, size_t n)
+{
+	const unsigned char	*psrc = (const unsigned char *)src;
+	unsigned char		*pdest;
+
+
+	if (!dest && !src)
+		return (NULL);
+	pdest = (unsigned char *)dest;
+	while (n--)
+		*pdest++ = *psrc++;
+	return (dest);
 }

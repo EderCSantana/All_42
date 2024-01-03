@@ -23,15 +23,13 @@
  */
 void	*ft_memset(void *ptr, int c, size_t num)
 {
-	int				i;
 	unsigned char	*aux;
 
-	i = 0;
-	aux = (unsigned char *) ptr;
-	while (i <= (int)num)
+	aux = ptr;
+	while (num)
 	{
-		aux[i] = (unsigned char)c;
-		i++;
+		aux[num - 1] = c;
+		num++;
 	}
 	return (ptr);
 }
