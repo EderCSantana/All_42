@@ -13,6 +13,12 @@
 #include <stdio.h>
 #include "libft.h"
 
+static void	ft_jumper(int *num, const char *str)
+{
+	while ((str[*num] >= 9 && str[*num] <= 13) || str[*num] == ' ')
+		(*num)++;
+}
+
 /**
  * @brief convert a string representation of an integer to an actual int value
  *
@@ -23,29 +29,31 @@
  * @return int Converted integer or zero (0): If the string does not contain
  *  a valid integer representation
  */
-int	ft_atoi(char *str)
+int	ft_atoi(const char *str)
 {
-	int	a;
-	int	b;
-	int	result;
+	long	n;
+	int		i;
+	int		neg;
 
-	a = 0;
-	b = 1;
-	result = 0;
-	while ((str[a] >= '\t' && str[a] <= '\r') || str[a] == ' ')
-		a++;
-	while (str[a] == '+' || str[a] == '-')
+	i = 0;
+	n = 0;
+	neg = 1;
+	ft_jumper(&i, str);
+	if (str[i] == '-' || str[i] == '+')
 	{
-		if (str[a] == '-')
-			b *= -1;
-		a++;
+		if (str[i++] == '-')
+			neg = -1;
 	}
-	while (str[a] >= '0' && str[a] <= '9')
+	while (str[i] >= '0' && str[i] <= '9')
 	{
-		result = (str[a] - '0') + (result * 10);
-		a++;
+		n = n * 10 + (str[i] - '0');
+		i++;
+		if (n > 2147483647 && neg == 1)
+			return (-1);
+		if (n > 2147483648 && neg == -1)
+			return (0);
 	}
-	return (result * b);
+	return (neg * (int)n);
 }
 // int main()
 // {

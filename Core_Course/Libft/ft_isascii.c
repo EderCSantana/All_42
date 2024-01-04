@@ -23,7 +23,7 @@
  * an ASCII character (0 to 127).
 Zero (false): If the input integer c is outside the ASCII range
  */
-int	ft_isascii(char c)
+int	ft_isascii(int c)
 {
-	return (c >= ('0' - 48) && c <= ('0' + 79));
+	return (c >= (0) && c <= (127));
 }

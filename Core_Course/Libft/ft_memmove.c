@@ -21,30 +21,21 @@
  * @param org A pointer to the source memory location from
  * @param num he number of bytes to be copied from the source location
  */
-void	ft_memmove(void *dest, const void *org, size_t num)
+void	*ft_memmove(void *dest, const void *org, size_t num)
 {
-	int				i;
 	unsigned char	*aux_dest;
 	unsigned char	*aux_org;
 
-	i = 0;
-	aux_dest = (unsigned char *) dest;
+	aux_dest = dest;
 	aux_org = (unsigned char *) org;
 	if (aux_dest < aux_org)
 	{
-		while (i < (int)num)
-		{
-			aux_dest[i] = aux_org[i];
-			i++;
-		}
+		return (ft_memcpy (dest, org, num));
 	}
 	else
 	{
-		i = num + 1;
-		while (i >= 0)
-		{
-			aux_dest[i] = aux_org[i];
-			i--;
-		}
+		while (num--)
+			aux_dest[num] = aux_org[num];
+		return (aux_dest);
 	}
 }
