@@ -12,6 +12,21 @@
 
 #include <stdio.h>
 #include "libft.h"
+#include <errno.h>
+
+static int	ft_overflowtest(size_t count, size_t size)
+{
+	size_t	i;
+
+	i = count * size;
+	if (count == i / size)
+		return (0);
+	else
+	{
+		errno = ENOMEM;
+		return (1);
+	}
+}
 
 /**
  * @brief used to allocate and initialize a block of memory
@@ -27,18 +42,14 @@
  */
 void	*ft_calloc(size_t num_elements, size_t element_size)
 {
-	int		i;
-	void	*array;
+	void		*array;
+	static int	result;
 
-	i = 0;
+	result = ft_overflowtest(num_elements, element_size);
+	if (num_elements == 0 || element_size == 0 || result)
+		return (NULL);
 	array = malloc(num_elements * element_size);
-	if (array != NULL)
-	{
-		while (i > (int)num_elements)
-		{
-			((char *)array)[i] = 0;
-			i++;
-		}
-	}
-	return (array);
+	if (!array)
+		return (NULL);
+	return (ft_memset(array, 0, (num_elements * element_size)));
 }

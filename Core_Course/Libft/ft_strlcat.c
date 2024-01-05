@@ -26,20 +26,12 @@
  */
 size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
-	int		i;
-	int		num;
-	size_t	size_total;
+	size_t		i;
 
-	i = ft_strlen(dst) - 1;
-	num = size / sizeof(dst[i]);
-	while (dst[i] < num)
-	{
-		dst[i] = src[i];
+	i = 0;
+	while ((dst[i] != '\0') && (i < size))
 		i++;
-	}
-	dst[num] = '\0';
-	size_total = (ft_strlen(dst) + ft_strlen(src) -1) * sizeof(src[0]);
-	return (size_total);
+	return (i + ft_strlcpy(dst + i, src, size - i));
 }
 
 // int main()

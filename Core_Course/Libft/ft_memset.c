@@ -26,10 +26,7 @@ void	*ft_memset(void *ptr, int c, size_t num)
 	unsigned char	*aux;
 
 	aux = ptr;
-	while (num)
-	{
-		aux[num - 1] = c;
-		num++;
-	}
+	while (num--)
+		aux[num] = c;
 	return (ptr);
 }
