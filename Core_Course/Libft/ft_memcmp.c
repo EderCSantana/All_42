@@ -30,18 +30,20 @@ in pointer1 than in pointer2.
  */
 int	ft_memcmp(const void *pointer1, const void *pointer2, size_t num)
 {
-	int		i;
-	char	*vec1;
-	char	*vec2;
+	unsigned char	*vec1;
+	unsigned char	*vec2;
 
-	i = 0;
-	vec1 = (char *)pointer1;
-	vec2 = (char *)pointer2;
-	while (i < (int)num)
+	vec1 = (unsigned char *)pointer1;
+	vec2 = (unsigned char *)pointer2;
+	if (pointer1 == 0 && pointer2 == 0)
+		return (0);
+	while (num)
 	{
-		if (vec1[i] != vec2[i])
-			return (vec1[i] - vec2[i]);
-		i++;
+		if (*vec1 != *vec2)
+			return (*vec1 - *vec2);
+		vec1++;
+		vec2++;
+		num--;
 	}
 	return (0);
 }

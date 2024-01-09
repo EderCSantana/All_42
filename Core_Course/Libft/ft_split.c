@@ -16,42 +16,35 @@
 
 static size_t	ft_cut_number(const char *s, char c)
 {
-	int		i;
+	size_t	i;
 	size_t	count;
 
 	i = 0;
 	count = 0;
-	while (s[i] != '\0')
+	while (*s)
 	{
-		if (s[i] == c)
+		if (*s == c)
+			i ++;
+		else if (i == 1)
 		{
+			i = 0;
 			count ++;
-			i++;
 		}
+		s++;
 	}
 	return (count);
 }
 
-static size_t	ft_strs(const char *s, char c)
+static size_t	ft_strsize(const char *s, char c)
 {
-	int		i;
 	size_t	count;
 
-	i = 0;
 	count = 0;
-	while (s[i] != '\0' && s[i] == c)
-	{
+	while ((s[count] != '\0') && s[count] != c)
 		count++;
-		i++;
-	}
 	return (count);
 }
 
-void	ft_nullret(const char *c)
-{
-	if (!c)
-		return;
-}
 /**
  * @brief Allocates (with malloc(3)) and returns an array
 of strings obtained by splitting ’s’ using the
@@ -65,30 +58,29 @@ with a NULL pointer.
  */
 char	**ft_split(char const *s, char c)
 {
-	int		i;
-	char	**matrix;
+	size_t		i;
+	char		**matrix;
 
-	ft_nullret(s);
+	if (!s)
+		return (NULL);
 	matrix = malloc((ft_cut_number(s, c) + 1) * sizeof(char *));
 	if (!matrix)
 		return (NULL);
 	i = 0;
-	while (s[i] != '\0')
+	while (*s)
 	{
-		if (s[i] != c)
+		if (*s != c)
 		{
-			matrix[i] = ft_substr(s, i - ft_strs(s, c), ft_strs(s, c));
+			matrix[i] = ft_substr(s, 0, ft_strsize(s, c));
 			if (!matrix[i])
-				return (0);
+				return (NULL);
+			s = s + ft_strsize(s, c);
 			i++;
 		}
 		else
-		{
-			if (i > 0)
-				matrix[i] = NULL;
-			i++;
-		}
+			s++;
 	}
+	matrix[i] = NULL;
 	return (matrix);
 }
 

@@ -20,16 +20,9 @@
  * @return int Non-zero (true): If the input character c is a digit (0-9).
 Zero (false): If the input character c is not a digit
  */
-int	ft_isdigit(char c)
+int	ft_isdigit(int c)
 {
-	// if (c == NULL)
-	// 	return (1);
-	if (c >= '0' && c <= '9')
-	{
-		return (0);
-	}
-	else
-		return (1);
+	return (c >= '0' && c <= '9');
 }
 
 // int main(int argc, char *argv[])

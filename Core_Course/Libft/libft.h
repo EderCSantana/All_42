@@ -26,7 +26,7 @@ int		ft_atoi(const char *str);
 int		ft_isalnum(char c);
 int		ft_isalpha(char c);
 int		ft_isascii(int c);
-int		ft_isdigit(char c);
+int		ft_isdigit(int c);
 int		ft_isprint(char c);
 int		ft_deccount(int n);
 int		ft_lstsize(t_list *lst);
