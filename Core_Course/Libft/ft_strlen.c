@@ -20,16 +20,14 @@
  * @return int The length of the string, not including the
  * terminating null character.
  */
-int	ft_strlen(const char *str)
+size_t	ft_strlen(const char *str)
 {
-	int	i;
+	size_t	i;
 
 	i = 0;
-	if (str[0] == '\0')
+	if (!str)
 		return (0);
 	while (str[i] != '\0')
-	{
 		i++;
-	}
 	return (i);
 }

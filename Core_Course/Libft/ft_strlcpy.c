@@ -14,7 +14,8 @@
 #include "libft.h"
 
 /**
- * @brief
+ * @briefThe strlcpy() function copies a source string to a destination string,
+ * with buffer overflow safety.
  *
  * @param dst A pointer to the destination string
  * @param src A pointer to the source string
@@ -24,22 +25,19 @@
  */
 size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
-	int		i;
-	int		num;
-	size_t	size_total;
+	size_t	i;
 
 	i = 0;
-	num = size / sizeof(dst[i]);
-	if (num == 0)
-		return (ft_strlen(src));
-	while (i < num && src[i] != '\0')
+	if (size > 0)
 	{
-		dst[i] = src[i];
-		i++;
+		while ((i < (size - 1)) && (src[i] != '\0'))
+		{
+			dst[i] = src[i];
+			i++;
+		}
+		dst[i] = '\0';
 	}
-	dst[num] = '\0';
-	size_total = ft_strlen(src) * sizeof(src[0]);
-	return (size_total);
+	return (ft_strlen(src));
 }
 
 // int main()

@@ -14,36 +14,50 @@
 #include <unistd.h>
 #include "libft.h"
 
-void	ft_putchar(char c)
-{
-	write(1, &c, 1);
-}
-
 /**
  * @brief Outputs the integer ’n’ to the given file descriptor.
  *
  * @param n The integer to output.
  * @param fd The file descriptor on which to write.
  */
-void	ft_putnbr(int nb)
+// void	ft_putnbr(int nb)
+// {
+// 	if (nb == -2147483648)
+// 	{
+// 		ft_putchar('-');
+// 		ft_putchar('2');
+// 		ft_putnbr(147483648);
+// 	}
+// 	else if (nb < 0)
+// 	{
+// 		ft_putchar('-');
+// 		nb = -nb;
+// 		ft_putnbr(nb);
+// 	}
+// 	else if (nb > 9)
+// 	{
+// 		ft_putnbr(nb / 10);
+// 		ft_putnbr(nb % 10);
+// 	}
+// 	else
+// 		ft_putchar_fd(nb + 48);
+// }
+void	ft_putnbr_fd(int n, int fd)
 {
-	if (nb == -2147483648)
+	unsigned int	number;
+
+	if (n < 0)
 	{
-		ft_putchar('-');
-		ft_putchar('2');
-		ft_putnbr(147483648);
-	}
-	else if (nb < 0)
-	{
-		ft_putchar('-');
-		nb = -nb;
-		ft_putnbr(nb);
-	}
-	else if (nb > 9)
-	{
-		ft_putnbr(nb / 10);
-		ft_putnbr(nb % 10);
+		ft_putchar_fd('-', fd);
+		number = (n * (-1));
 	}
 	else
-		ft_putchar(nb + 48);
+	{
+		number = n;
+	}
+	if (number > 9)
+	{
+		ft_putnbr_fd(number / 10, fd);
+	}
+	ft_putchar_fd(number % 10 + '0', fd);
 }

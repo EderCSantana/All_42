@@ -131,25 +131,3 @@ char	*ft_itoa(int n)
 	}
 	return (ft_printitoa(n, str, len));
 }
-// int main()
-// {
-//     int test_values[] = {123, -456, 7890, 0, -987654321, -1};
-
-//     for (int i = 0; i < sizeof(test_values) / sizeof(test_values[0]); i++)
-//     {
-//         int num = test_values[i];
-//         char *result = ft_itoa(num);
-
-//         if (result != NULL)
-//         {
-//             printf("Integer: %d, String: %s\n", num, result);
-//             free(result); // Don't forget to free the allocated memory
-//         }
-//         else
-//         {
-//             printf("Memory allocation failed for integer: %d\n", num);
-//         }
-//     }
-
-//     return 0;
-// }

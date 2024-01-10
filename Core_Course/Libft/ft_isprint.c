@@ -21,7 +21,7 @@
  * printable character within the ASCII range of 0 to 127.
 Zero: If the input character c is not a printable character
  */
-int	ft_isprint(char c)
+int	ft_isprint(int c)
 {
-	return ((c >= '\t' && c <= '\r') || c == ' ' || c == '\x7f');
+	return (c >= 32 && c <= 126);
 }

@@ -51,6 +51,7 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 			the_end->content = ft_lstnew((*f)(lst->content));
 			the_end->next = NULL;
 		}
+		lst = lst->next;
 	}
 	return (aux);
 }

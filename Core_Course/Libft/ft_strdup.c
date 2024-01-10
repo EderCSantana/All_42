@@ -22,20 +22,44 @@
  *  duplicate of the string pointed to by str.
  *  If the allocation fails, returns NULL
  */
-char	*ft_strdup(const char *str)
-{
-	int		i;
-	char	*dup;
+// char	*ft_strdup(const char *str)
+// {
+// 	int		i;
+// 	char	*dup;
 
-	i = 0;
-	while (str[i] != '\0')
-		i++;
-	dup = malloc(i + 1);
-	if (dup == NULL)
+// 	i = 0;
+// 	while (str[i] != '\0')
+// 		i++;
+// 	dup = malloc(i + 1);
+// 	if (dup == NULL)
+// 		return (NULL);
+// 	while (i--)
+// 	{
+// 		dup[i] = str[i];
+// 	}
+// 	return (dup);
+// }
+#include "libft.h"
+
+char	*ft_strdup(const char *src)
+{
+	size_t	count;
+	size_t	src_size;
+	char	*new_str;
+
+	count = 0;
+	src_size = ft_strlen(src);
+	new_str = (char *)malloc((src_size + 1) * sizeof(char));
+	if (new_str == NULL)
 		return (NULL);
-	while (i--)
+
+	while (count < src_size)
 	{
-		dup[i] = str[i];
+		new_str[count] = src[count];
+		count++;
 	}
-	return (dup);
+
+	new_str[src_size] = '\0';
+	return (new_str);
 }
+

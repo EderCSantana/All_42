@@ -14,17 +14,59 @@
 #include <stdlib.h>
 #include "libft.h"
 
+static size_t	ft_cut_number(const char *s, char c);
+static size_t	ft_strsize(const char *s, char c);
+
+/**
+ * @brief Allocates (with malloc(3)) and returns an array
+of strings obtained by splitting ’s’ using the
+character ’c’ as a delimiter. The array must end
+with a NULL pointer.
+ *
+ * @param s The string to be split.
+ * @param c The delimiter character.
+ * @return char** The array of new strings resulting from the split.
+ * NULL if the allocation fails.
+ */
+char	**ft_split(char const *s, char c)
+{
+	size_t		i;
+	char		**matrix;
+
+	if (!s)
+		return (NULL);
+	i = 0;
+	matrix = malloc((ft_cut_number(s, c) + 1) * sizeof(char *));
+	if (!matrix)
+		return (NULL);
+	while (*s)
+	{
+		if (*s != c)
+		{
+			matrix[i] = ft_substr(s, 0, ft_strsize(s, c));
+			if (!matrix[i])
+				return (NULL);
+			s += ft_strsize(s, c);
+			i++;
+		}
+		else
+			s++;
+	}
+	matrix[i] = NULL;
+	return (matrix);
+}
+
 static size_t	ft_cut_number(const char *s, char c)
 {
 	size_t	i;
 	size_t	count;
 
-	i = 0;
+	i = 1;
 	count = 0;
 	while (*s)
 	{
 		if (*s == c)
-			i ++;
+			i = 1;
 		else if (i == 1)
 		{
 			i = 0;
@@ -45,79 +87,68 @@ static size_t	ft_strsize(const char *s, char c)
 	return (count);
 }
 
-/**
- * @brief Allocates (with malloc(3)) and returns an array
-of strings obtained by splitting ’s’ using the
-character ’c’ as a delimiter. The array must end
-with a NULL pointer.
- *
- * @param s The string to be split.
- * @param c The delimiter character.
- * @return char** The array of new strings resulting from the split.
- * NULL if the allocation fails.
- */
-char	**ft_split(char const *s, char c)
-{
-	size_t		i;
-	char		**matrix;
 
-	if (!s)
-		return (NULL);
-	matrix = malloc((ft_cut_number(s, c) + 1) * sizeof(char *));
-	if (!matrix)
-		return (NULL);
-	i = 0;
-	while (*s)
-	{
-		if (*s != c)
-		{
-			matrix[i] = ft_substr(s, 0, ft_strsize(s, c));
-			if (!matrix[i])
-				return (NULL);
-			s = s + ft_strsize(s, c);
-			i++;
-		}
-		else
-			s++;
-	}
-	matrix[i] = NULL;
-	return (matrix);
-}
 
-// void imprimir_matriz_char(char **matriz)
+// static	size_t	ft_count(char const *string, char c);
+// static size_t	ft_wordlen(char const *string, char c);
+
+// char	**ft_split(char const *s, char c)
 // {
-// 	int linhas = 0;
-// 	int colunas = 0;
+// 	char	**array;
+// 	size_t	i;
 
-//   // Encontre o número de linhas e colunas da matriz
-// 	for (int i = 0; matriz[i] != NULL; i++) {
-//     linhas++;
-//     colunas = ft_strlen(matriz[i]);
+// 	if (!s)
+// 		return (NULL);
+// 	i = 0;
+// 	array = malloc((ft_count(s, c) + 1) * sizeof(char *));
+// 	if (!array)
+// 		return (NULL);
+// 	while (*s)
+// 	{
+// 		if (*s != c)
+// 		{
+// 			array[i] = ft_substr(s, 0, ft_wordlen(s, c));
+// 			if (!array[i])
+// 				return (NULL);
+// 			s += ft_wordlen(s, c);
+// 			i++;
+// 		}
+// 		else
+// 			s++;
 // 	}
-
-//   // Imprima a matriz
-// 	for (int i = 0; i < linhas; i++) {
-//     for (int j = 0; j < colunas; j++) {
-// 	printf("%c ", matriz[i][j]);
-//     }
-//     printf("\n");
-// 	}
+// 	array[i] = NULL;
+// 	return (array);
 // }
-// int main()
-// {
-// 	char* string = "chupa que a cana eh doce meu filho";
-// 	char remove = ' ';
-// 	char** matriz;
 
-// 	matriz = ft_split(string, remove);
-// 	if (matriz == NULL) {
-// 		printf("Erro ao alocar memória para a matriz de strings\n");
-// 		return 1;
+// static	size_t	ft_count(char const *string, char c)
+// {
+// 	size_t	check;
+// 	size_t	number_of_words;
+
+// 	check = 1;
+// 	number_of_words = 0;
+// 	while (*string)
+// 	{
+// 		if (*string == c)
+// 			check = 1;
+// 		else if (check == 1)
+// 		{
+// 			check = 0;
+// 			number_of_words++;
+// 		}
+// 		string++;
 // 	}
-// 	imprimir_matriz_char(matriz);
-// 	for (int i = 0; matriz[i] != NULL; i++) {
-// 		free(matriz[i]);
+// 	return (number_of_words);
+// }
+
+// static size_t	ft_wordlen(char const *string, char c)
+// {
+// 	size_t	i;
+
+// 	i = 0;
+// 	while ((string[i] != '\0') && string[i] != c)
+// 	{
+// 		i++;
 // 	}
-// 	free(matriz);
-// 	return 0;
+// 	return (i);
 // }

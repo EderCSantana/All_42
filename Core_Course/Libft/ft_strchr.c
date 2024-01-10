@@ -14,7 +14,7 @@
 #include "libft.h"
 
 /**
- * @brief
+ * @brief Searches for the first occurrence of the character c
  *
  * @param s  A pointer to the string to be searched
  * @param c The character to search for
@@ -23,12 +23,13 @@
  */
 char	*ft_strchr(const char *s, int c)
 {
-	int	i;
+	const char	*p;
 
-	i = 0;
-	while (s[i] != '\0' && s[i] != c)
-	{
-		i++;
-	}
-	return ((char *)&s[i]);
+	p = s;
+	while (*p != (char)c && *p != '\0')
+		p++;
+	if (*p == (char)c || *p == '\0')
+		return ((char *)p);
+	return (NULL);
 }
+
