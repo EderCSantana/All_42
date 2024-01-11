@@ -23,13 +23,29 @@
  */
 char	*ft_strchr(const char *s, int c)
 {
-	const char	*p;
+	size_t	i;
 
-	p = s;
-	while (*p != (char)c && *p != '\0')
-		p++;
-	if (*p == (char)c || *p == '\0')
-		return ((char *)p);
+	i = 0;
+	while (s[i] != '\0')
+	{
+		if (s[i] == (char)c)
+			return ((char *)s + i);
+		i++;
+	}
+	if (c == '\0')
+		return ((char *)s + i);
 	return (NULL);
 }
+// char	*ft_strchr(const char *s, int c)
+// {
+// 	const char	*p;
+
+// 	p = s;
+// 	while (*p != (char)c && *p != '\0')
+// 		p++;
+// 	if (*p == (char)c || *p == '\0')
+// 		return ((char *)p);
+// 	return (NULL);
+// }
+// for some reason countind with pointer doesn't work
 

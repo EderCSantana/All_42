@@ -39,7 +39,7 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	{
 		if (aux == NULL)
 		{
-			aux = ft_lstnew((*f)(lst->content));
+			aux = ft_lstnew(((*f)(lst->content)));
 			if (aux == NULL)
 				ft_lstdelone(aux, del);
 			the_end = ft_lstlast(aux);
@@ -48,7 +48,7 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 		{
 			the_end->next = ft_lstnew(aux);
 			the_end = the_end->next;
-			the_end->content = ft_lstnew((*f)(lst->content));
+			the_end->content = ((*f)(lst->content));
 			the_end->next = NULL;
 		}
 		lst = lst->next;

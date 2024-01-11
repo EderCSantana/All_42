@@ -14,6 +14,8 @@
 #include <stdlib.h>
 #include "libft.h"
 
+static size_t	ft_param_valid(const char *s, unsigned int start, size_t len);
+static char	*ft_boundary_checker(void);
 /**
  * @brief Allocates (with malloc(3)) and returns a substring
  * from the string ’s’.
@@ -33,18 +35,44 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	i = 0;
 	if (!s)
 		return (NULL);
-	else if ((int)start > ft_strlen(s))
-		return (NULL);
-	result = (char *)malloc(sizeof(char) * (len + 1));
+	else if ((start > ft_strlen(s)))
+		return (ft_boundary_checker());
+	result = (char *)malloc((ft_param_valid(s, start, len)));
 	if (!result)
 		return (NULL);
-	while (s[start + i] != '\0' && i < len)
+	while ((len--) && (s[start + i] != '\0') && \
+	((start + i) < ft_strlen(s)))
 	{
 		result[i] = s[start + i];
 		i++;
 	}
 	result[i] = '\0';
 	return (result);
+}
+
+static size_t	ft_param_valid(const char *s, unsigned int start, size_t len)
+{
+	size_t	string_len;
+
+	string_len = ft_strlen(s);
+	if (start > string_len)
+		return (1);
+	else if (start + len > string_len)
+		return (string_len - start + 1);
+	else
+		return (len + 1);
+}
+
+
+static char	*ft_boundary_checker(void)
+{
+	char	*string;
+
+	string = malloc(sizeof(char));
+	if (!string)
+		return (NULL);
+	string[0] = '\0';
+	return (string);
 }
 
 // int main()
