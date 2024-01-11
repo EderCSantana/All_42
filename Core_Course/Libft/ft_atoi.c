@@ -55,6 +55,7 @@ int	ft_atoi(const char *str)
 	}
 	return (neg * (int)n);
 }
+
 // int main()
 // {
 // 	char *s = "      	---+--+2147--+-ab567";

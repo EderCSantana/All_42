@@ -12,21 +12,8 @@
 
 #include <stdio.h>
 #include "libft.h"
-#include <errno.h>
 
-static int	ft_overflowtest(size_t count, size_t size)
-{
-	size_t	i;
-
-	i = count * size;
-	if (count == i / size)
-		return (0);
-	else
-	{
-		errno = ENOMEM;
-		return (1);
-	}
-}
+static int	ft_overflowtest(size_t count, size_t size);
 
 /**
  * @brief used to allocate and initialize a block of memory
@@ -40,16 +27,48 @@ static int	ft_overflowtest(size_t count, size_t size)
  * the function returns a pointer to the start of the allocated memory block.
  * NULL (null pointer): If memory allocation fails
  */
-void	*ft_calloc(size_t num_elements, size_t element_size)
+void	*ft_calloc(size_t num_e, size_t e_size)
 {
-	void		*array;
-	static int	result;
+	void	*array;
 
-	result = ft_overflowtest(num_elements, element_size);
-	if (num_elements == 0 || element_size == 0 || result)
+	if (num_e == 0 || e_size == 0 || ft_overflowtest(num_e, e_size))
 		return (NULL);
-	array = malloc(num_elements * element_size);
+	array = malloc(num_e * e_size);
 	if (!array)
 		return (NULL);
-	return (ft_memset(array, 0, (num_elements * element_size)));
+	return (ft_memset(array, 0, (num_e * e_size)));
 }
+
+static int	ft_overflowtest(size_t count, size_t size)
+{
+	size_t	i;
+
+	i = count * size;
+	if (count == i / size != count)
+		return (0);
+	else
+	{
+		return (1);
+	}
+}
+// #include "libft.h"
+
+// void	*ft_calloc(size_t count, size_t size)
+// {
+// 	char	*allocation;
+// 	size_t	index;
+
+// 	if ((ssize_t)count < 0 && (ssize_t)size < 0)
+// 		return (NULL);
+// 	allocation = malloc(count * size);
+// 	if (!allocation)
+// 		return (NULL);
+// 	index = 0;
+// 	while (index < (count * size))
+// 	{
+// 		*(allocation + index) = '\0';
+// 		index++;
+// 	}
+
+// 	return ((void *)allocation);
+// }
